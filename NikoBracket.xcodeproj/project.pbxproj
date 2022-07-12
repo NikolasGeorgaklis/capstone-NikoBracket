@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		158449B9F010F7B81BBE6CAE /* Pods_NikoBracket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AB6547BC4AA7125ECBD228 /* Pods_NikoBracket.framework */; };
 		43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35B287DFC5800B30CC0 /* AppDelegate.m */; };
 		43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35E287DFC5800B30CC0 /* SceneDelegate.m */; };
 		43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF361287DFC5800B30CC0 /* ViewController.m */; };
@@ -17,6 +18,9 @@
 		43FCF377287DFC5900B30CC0 /* NikoBracketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF376287DFC5900B30CC0 /* NikoBracketTests.m */; };
 		43FCF381287DFC5900B30CC0 /* NikoBracketUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF380287DFC5900B30CC0 /* NikoBracketUITests.m */; };
 		43FCF383287DFC5900B30CC0 /* NikoBracketUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF382287DFC5900B30CC0 /* NikoBracketUITestsLaunchTests.m */; };
+		43FCF396287E10C200B30CC0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF395287E10C200B30CC0 /* LoginViewController.m */; };
+		467B4B1F19A955E95870A737 /* Pods_NikoBracket_NikoBracketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B44487FD4BB980CE6ADF263 /* Pods_NikoBracket_NikoBracketUITests.framework */; };
+		B54150522032D3177735BC58 /* Pods_NikoBracketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C149748E6F469F6F4E158C2 /* Pods_NikoBracketTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B63A441EB2844F59AFC5797 /* Pods-NikoBracket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracket.debug.xcconfig"; path = "Target Support Files/Pods-NikoBracket/Pods-NikoBracket.debug.xcconfig"; sourceTree = "<group>"; };
+		2C149748E6F469F6F4E158C2 /* Pods_NikoBracketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoBracketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C25FB1B6E0BB80ED29971A3 /* Pods-NikoBracketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracketTests.release.xcconfig"; path = "Target Support Files/Pods-NikoBracketTests/Pods-NikoBracketTests.release.xcconfig"; sourceTree = "<group>"; };
 		43FCF357287DFC5800B30CC0 /* NikoBracket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoBracket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FCF35A287DFC5800B30CC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43FCF35B287DFC5800B30CC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +61,14 @@
 		43FCF37C287DFC5900B30CC0 /* NikoBracketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NikoBracketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FCF380287DFC5900B30CC0 /* NikoBracketUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NikoBracketUITests.m; sourceTree = "<group>"; };
 		43FCF382287DFC5900B30CC0 /* NikoBracketUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NikoBracketUITestsLaunchTests.m; sourceTree = "<group>"; };
+		43FCF394287E10C200B30CC0 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		43FCF395287E10C200B30CC0 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4E62453264A6E14F8A5DD728 /* Pods-NikoBracket-NikoBracketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracket-NikoBracketUITests.debug.xcconfig"; path = "Target Support Files/Pods-NikoBracket-NikoBracketUITests/Pods-NikoBracket-NikoBracketUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		936B8DAD3EEB4B3D77DBDAAF /* Pods-NikoBracket-NikoBracketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracket-NikoBracketUITests.release.xcconfig"; path = "Target Support Files/Pods-NikoBracket-NikoBracketUITests/Pods-NikoBracket-NikoBracketUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B44487FD4BB980CE6ADF263 /* Pods_NikoBracket_NikoBracketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoBracket_NikoBracketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3AB6547BC4AA7125ECBD228 /* Pods_NikoBracket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoBracket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC683A79CB9C1E8BE05FA3D6 /* Pods-NikoBracketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracketTests.debug.xcconfig"; path = "Target Support Files/Pods-NikoBracketTests/Pods-NikoBracketTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD6189859E6D713B490D4D8F /* Pods-NikoBracket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracket.release.xcconfig"; path = "Target Support Files/Pods-NikoBracket/Pods-NikoBracket.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158449B9F010F7B81BBE6CAE /* Pods_NikoBracket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54150522032D3177735BC58 /* Pods_NikoBracketTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +92,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467B4B1F19A955E95870A737 /* Pods_NikoBracket_NikoBracketUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DBC6819D19D72EB58103C50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3AB6547BC4AA7125ECBD228 /* Pods_NikoBracket.framework */,
+				9B44487FD4BB980CE6ADF263 /* Pods_NikoBracket_NikoBracketUITests.framework */,
+				2C149748E6F469F6F4E158C2 /* Pods_NikoBracketTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43FCF34E287DFC5800B30CC0 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +116,8 @@
 				43FCF375287DFC5900B30CC0 /* NikoBracketTests */,
 				43FCF37F287DFC5900B30CC0 /* NikoBracketUITests */,
 				43FCF358287DFC5800B30CC0 /* Products */,
+				B5EF5F742CC518799F61FD0B /* Pods */,
+				2DBC6819D19D72EB58103C50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +145,8 @@
 				43FCF368287DFC5900B30CC0 /* LaunchScreen.storyboard */,
 				43FCF36B287DFC5900B30CC0 /* Info.plist */,
 				43FCF36C287DFC5900B30CC0 /* main.m */,
+				43FCF394287E10C200B30CC0 /* LoginViewController.h */,
+				43FCF395287E10C200B30CC0 /* LoginViewController.m */,
 			);
 			path = NikoBracket;
 			sourceTree = "<group>";
@@ -136,6 +168,19 @@
 			path = NikoBracketUITests;
 			sourceTree = "<group>";
 		};
+		B5EF5F742CC518799F61FD0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B63A441EB2844F59AFC5797 /* Pods-NikoBracket.debug.xcconfig */,
+				CD6189859E6D713B490D4D8F /* Pods-NikoBracket.release.xcconfig */,
+				4E62453264A6E14F8A5DD728 /* Pods-NikoBracket-NikoBracketUITests.debug.xcconfig */,
+				936B8DAD3EEB4B3D77DBDAAF /* Pods-NikoBracket-NikoBracketUITests.release.xcconfig */,
+				BC683A79CB9C1E8BE05FA3D6 /* Pods-NikoBracketTests.debug.xcconfig */,
+				2C25FB1B6E0BB80ED29971A3 /* Pods-NikoBracketTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43FCF386287DFC5900B30CC0 /* Build configuration list for PBXNativeTarget "NikoBracket" */;
 			buildPhases = (
+				9D6BB05A0A13507A53D7BB98 /* [CP] Check Pods Manifest.lock */,
 				43FCF353287DFC5800B30CC0 /* Sources */,
 				43FCF354287DFC5800B30CC0 /* Frameworks */,
 				43FCF355287DFC5800B30CC0 /* Resources */,
+				134AE84CE5CCE40697E619D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43FCF389287DFC5900B30CC0 /* Build configuration list for PBXNativeTarget "NikoBracketTests" */;
 			buildPhases = (
+				64CF9CBEDAD761823145AD32 /* [CP] Check Pods Manifest.lock */,
 				43FCF36E287DFC5900B30CC0 /* Sources */,
 				43FCF36F287DFC5900B30CC0 /* Frameworks */,
 				43FCF370287DFC5900B30CC0 /* Resources */,
@@ -178,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43FCF38C287DFC5900B30CC0 /* Build configuration list for PBXNativeTarget "NikoBracketUITests" */;
 			buildPhases = (
+				B8B4D2DE755A41C7B224A7EC /* [CP] Check Pods Manifest.lock */,
 				43FCF378287DFC5900B30CC0 /* Sources */,
 				43FCF379287DFC5900B30CC0 /* Frameworks */,
 				43FCF37A287DFC5900B30CC0 /* Resources */,
+				5704E864D1469D87EC92F63B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +311,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		134AE84CE5CCE40697E619D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NikoBracket/Pods-NikoBracket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NikoBracket/Pods-NikoBracket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NikoBracket/Pods-NikoBracket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5704E864D1469D87EC92F63B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NikoBracket-NikoBracketUITests/Pods-NikoBracket-NikoBracketUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NikoBracket-NikoBracketUITests/Pods-NikoBracket-NikoBracketUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NikoBracket-NikoBracketUITests/Pods-NikoBracket-NikoBracketUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64CF9CBEDAD761823145AD32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NikoBracketTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D6BB05A0A13507A53D7BB98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NikoBracket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8B4D2DE755A41C7B224A7EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NikoBracket-NikoBracketUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43FCF353287DFC5800B30CC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -270,6 +423,7 @@
 				43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */,
 				43FCF36D287DFC5900B30CC0 /* main.m in Sources */,
 				43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */,
+				43FCF396287E10C200B30CC0 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +591,7 @@
 		};
 		43FCF387287DFC5900B30CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B63A441EB2844F59AFC5797 /* Pods-NikoBracket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +619,7 @@
 		};
 		43FCF388287DFC5900B30CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD6189859E6D713B490D4D8F /* Pods-NikoBracket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,6 +647,7 @@
 		};
 		43FCF38A287DFC5900B30CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC683A79CB9C1E8BE05FA3D6 /* Pods-NikoBracketTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +666,7 @@
 		};
 		43FCF38B287DFC5900B30CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C25FB1B6E0BB80ED29971A3 /* Pods-NikoBracketTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +685,7 @@
 		};
 		43FCF38D287DFC5900B30CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E62453264A6E14F8A5DD728 /* Pods-NikoBracket-NikoBracketUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -543,6 +702,7 @@
 		};
 		43FCF38E287DFC5900B30CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 936B8DAD3EEB4B3D77DBDAAF /* Pods-NikoBracket-NikoBracketUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
