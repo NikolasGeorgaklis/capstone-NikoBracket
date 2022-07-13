@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,8 +51,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="didTapLogin" destination="MhD-6U-lFp" id="hTy-YD-zGB"/>
-                        <outlet property="didTapSignUp" destination="bMe-QA-I5b" id="VoD-0q-V7t"/>
                         <outlet property="password" destination="Xa8-gl-zrN" id="cBO-fG-cct"/>
                         <outlet property="username" destination="CR8-Ng-KlB" id="OBh-SZ-MJQ"/>
                         <segue destination="KLh-AE-wjA" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="fe8-MT-pcs"/>
@@ -78,13 +76,24 @@
             </objects>
             <point key="canvasLocation" x="3022" y="511"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="799-Cn-jgF">
             <objects>
-                <viewController id="qnE-zO-hoK" sceneMemberID="viewController">
+                <viewController id="qnE-zO-hoK" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ghm-F5-hdF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzP-9O-E0n">
+                                <rect key="frame" x="159" y="433" width="96" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log out"/>
+                                <connections>
+                                    <action selector="didTapLogOut:" destination="qnE-zO-hoK" eventType="touchUpInside" id="9m5-ja-iSS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="CeT-rI-XgS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -92,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZj-8d-pEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3023" y="-234"/>
+            <point key="canvasLocation" x="3021.739130434783" y="-234.375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JFC-UV-yZG">
