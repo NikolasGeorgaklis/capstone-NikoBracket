@@ -52,6 +52,17 @@
     
 }
 - (IBAction)didTapSignUp:(id)sender{
+    if ([self.username.text rangeOfString:@"villanova.edu"].location == NSNotFound) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                     message:@"You must have a villanova.edu email to register."
+                                                     preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+         {}];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
     if (self.username.text.length == 0 || self.password.text.length == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                      message:@"Empty Field(s)"
