@@ -24,6 +24,8 @@
 }
 
 - (IBAction)didTapLogin:(id)sender{
+    
+    //check for empty fields
     if (self.username.text.length == 0 || self.password.text.length == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                      message:@"Empty Field(s)"
@@ -52,6 +54,8 @@
     
 }
 - (IBAction)didTapSignUp:(id)sender{
+    
+    //villanova.edu only register
     if ([self.username.text rangeOfString:@"villanova.edu"].location == NSNotFound) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                      message:@"You must have a villanova.edu email to register."
@@ -63,6 +67,7 @@
         [self presentViewController:alert animated:YES completion:nil];
     }
     
+    //check for empty fields
     if (self.username.text.length == 0 || self.password.text.length == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                      message:@"Empty Field(s)"
@@ -79,6 +84,7 @@
            
        // set user properties
        newUser.username = self.username.text;
+       newUser.email = self.username.text;
        newUser.password = self.password.text;
        
        // call sign up function on the object
@@ -90,7 +96,7 @@
                
                // notify user of successful registration
                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success!"
-                                                            message:@"User registration successful."
+                                                            message:@"Please check your email for verification."
                                                             preferredStyle:UIAlertControllerStyleAlert];
 
                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
