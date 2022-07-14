@@ -79,7 +79,7 @@
         <!--Home View Controller-->
         <scene sceneID="799-Cn-jgF">
             <objects>
-                <viewController id="qnE-zO-hoK" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="qnE-zO-hoK" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ghm-F5-hdF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +106,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="JFC-UV-yZG">
             <objects>
-                <tabBarController id="KLh-AE-wjA" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="KLh-AE-wjA" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DBC-Nj-1os"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OYK-bi-BKd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
