@@ -43,6 +43,14 @@
             [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
                 if (error != nil) {
                     NSLog(@"User log in failed: %@", error.localizedDescription);
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Failed"
+                                                                 message:@"Invalid username or password"
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
+
+                    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+                     {}];
+                    [alert addAction:ok];
+                    [self presentViewController:alert animated:YES completion:nil];
                 } else {
                     NSLog(@"User logged in successfully");
                     // display view controller that needs to shown after successful login
@@ -66,9 +74,7 @@
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    
-    //check for empty fields
-    if (self.username.text.length == 0 || self.password.text.length == 0) {
+    else if (self.username.text.length == 0 || self.password.text.length == 0) {     //check for empty fields
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                      message:@"Empty Field(s)"
                                                      preferredStyle:UIAlertControllerStyleAlert];
@@ -78,7 +84,7 @@
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    else{
+    else {
         // initialize a user object
         PFUser *newUser = [PFUser user];
            
