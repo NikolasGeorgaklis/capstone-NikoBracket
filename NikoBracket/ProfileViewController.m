@@ -8,6 +8,8 @@
 #import "ProfileViewController.h"
 #import "Parse/Parse.h"
 #import "LoginViewController.h"
+#import <Foundation/Foundation.h>
+
 
 @interface ProfileViewController ()
 
@@ -18,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFUser *user = [PFUser currentUser];
     
+//    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:]];
+//    self.pfp.image = [UIImage imageWithData:imageData];
     
 }
 

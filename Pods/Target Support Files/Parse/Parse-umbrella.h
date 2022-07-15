@@ -53,6 +53,20 @@
 #import "PFUser+Synchronous.h"
 #import "PFUser.h"
 #import "PFUserAuthenticationDelegate.h"
+#import "PFLogInView.h"
+#import "PFLogInViewController.h"
+#import "PFLogInView_Private.h"
+#import "PFSignUpView.h"
+#import "PFSignUpViewController.h"
+#import "PFQueryTableViewController.h"
+#import "PFQueryCollectionViewController.h"
+#import "PFProductTableViewController.h"
+#import "PFImageView.h"
+#import "PFTextField.h"
+#import "PFCollectionViewCell.h"
+#import "PFPurchaseTableViewCell.h"
+#import "PFTableViewCell.h"
+#import "ParseUIConstants.h"
 
 FOUNDATION_EXPORT double ParseVersionNumber;
 FOUNDATION_EXPORT const unsigned char ParseVersionString[];
