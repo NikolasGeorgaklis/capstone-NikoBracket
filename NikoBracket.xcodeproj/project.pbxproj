@@ -10,6 +10,8 @@
 		158449B9F010F7B81BBE6CAE /* Pods_NikoBracket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AB6547BC4AA7125ECBD228 /* Pods_NikoBracket.framework */; };
 		43DA21F1287F8E0000457AC4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA21F0287F8E0000457AC4 /* HomeViewController.m */; };
 		43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784728809521007E15E6 /* PhotoMapViewController.m */; };
+		43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */; };
+		43F2784E2881F12A007E15E6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784D2881F12A007E15E6 /* ProfileViewController.m */; };
 		43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35B287DFC5800B30CC0 /* AppDelegate.m */; };
 		43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35E287DFC5800B30CC0 /* SceneDelegate.m */; };
 		43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF361287DFC5800B30CC0 /* ViewController.m */; };
@@ -50,6 +52,10 @@
 		43DA21F0287F8E0000457AC4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		43F2784628809521007E15E6 /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
 		43F2784728809521007E15E6 /* PhotoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
+		43F278492881F0E6007E15E6 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		43F2784C2881F12A007E15E6 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		43F2784D2881F12A007E15E6 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		43FCF357287DFC5800B30CC0 /* NikoBracket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoBracket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FCF35A287DFC5800B30CC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43FCF35B287DFC5800B30CC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -157,6 +163,10 @@
 				43DA21F0287F8E0000457AC4 /* HomeViewController.m */,
 				43F2784628809521007E15E6 /* PhotoMapViewController.h */,
 				43F2784728809521007E15E6 /* PhotoMapViewController.m */,
+				43F278492881F0E6007E15E6 /* EditProfileViewController.h */,
+				43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */,
+				43F2784C2881F12A007E15E6 /* ProfileViewController.h */,
+				43F2784D2881F12A007E15E6 /* ProfileViewController.m */,
 			);
 			path = NikoBracket;
 			sourceTree = "<group>";
@@ -430,9 +440,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */,
+				43F2784E2881F12A007E15E6 /* ProfileViewController.m in Sources */,
 				43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */,
 				43FCF36D287DFC5900B30CC0 /* main.m in Sources */,
 				43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */,
+				43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */,
 				43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */,
 				43FCF396287E10C200B30CC0 /* LoginViewController.m in Sources */,
 				43DA21F1287F8E0000457AC4 /* HomeViewController.m in Sources */,
