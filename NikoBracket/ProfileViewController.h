@@ -6,12 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse/Parse.h"
+#import "Parse/PFImageView.h"
+@import Parse;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *pfp;
+@property (weak, nonatomic) IBOutlet PFImageView *pfp;
 
 @end
 
