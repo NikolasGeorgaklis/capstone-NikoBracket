@@ -6,6 +6,11 @@
 //
 
 #import "EditProfileViewController.h"
+#import "ProfileViewController.h"
+#import "Parse/Parse.h"
+#import "LoginViewController.h"
+#import <Foundation/Foundation.h>
+#import "Parse/PFImageView.h"
 
 @interface EditProfileViewController ()
 
@@ -16,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFUser *user = [PFUser currentUser];
+    
+    self.pfp.file = user[@"profilePicture"];
+    [self.pfp loadInBackground];
 }
 
 /*
