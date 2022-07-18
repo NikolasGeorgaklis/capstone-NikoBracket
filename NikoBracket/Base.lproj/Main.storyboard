@@ -170,7 +170,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="displayName" destination="EKO-gF-owO" id="uyW-yW-5rC"/>
-                        <outlet property="email" destination="58L-Rx-Rl1" id="RQC-bq-n76"/>
+                        <outlet property="emailLabel" destination="58L-Rx-Rl1" id="Igb-Us-ygJ"/>
                         <outlet property="gradeAndMajor" destination="VJb-sE-TK0" id="1RK-hY-6UX"/>
                         <outlet property="pfp" destination="LAx-3g-zFl" id="siy-fK-Hkz"/>
                     </connections>

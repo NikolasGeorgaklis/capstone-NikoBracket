@@ -16,6 +16,7 @@
 @interface ProfileViewController () <EditProfileViewControllerDelegate>
 
 @property (strong, nonatomic) PFUser *user;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 
 @end
 
@@ -27,14 +28,18 @@
     self.user = [PFUser currentUser];
     
     self.pfp.file = self.user[@"profilePicture"];
+    self.emailLabel.text = self.user[@"email"];
+    self.displayName.text = self.user[@"displayName"];
+    self.gradeAndMajor.text = [NSString stringWithFormat:@"%@ %@ Major", self.user[@"grade"], self.user[@"major"]];
+
     [self.pfp loadInBackground];
 }
 
 - (void)updateProfile{
     self.pfp.file = self.user[@"profilePicture"];
     self.displayName.text = self.user[@"displayName"];
-    NSLog(@"gardee %@", self.user[@"grade"]);
     self.gradeAndMajor.text = [NSString stringWithFormat:@"%@ %@ Major", self.user[@"grade"], self.user[@"major"]];
+    self.emailLabel.text = self.user[@"email"];
 
     [self.pfp loadInBackground];
 }

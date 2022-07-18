@@ -32,6 +32,11 @@
     self.pfp.file = self.user[@"profilePicture"];
     [self.pfp loadInBackground];
     
+    self.displayNameField.text = self.user[@"displayName"];
+    self.gradeField.text = self.user[@"grade"];
+    self.majorField.text = self.user[@"major"];
+
+    
 }
 
 - (IBAction)changePfp:(id)sender {
@@ -61,7 +66,7 @@
     [self resizeImage:editedImage withSize:self.pfp.bounds.size];
     self.pfp.image = editedImage;
     NSData *imageData = UIImagePNGRepresentation(self.pfp.image);
-    PFFileObject *imageFile = [PFFileObject fileObjectWithName:self.pfp.file.name data:imageData];
+    PFFileObject *imageFile = [PFFileObject fileObjectWithName:@"image.png" data:imageData]; //self.pfp.file.name
         
     self.user[@"profilePicture"] = imageFile;
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {

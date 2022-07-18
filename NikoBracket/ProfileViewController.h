@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet PFImageView *pfp;
 @property (weak, nonatomic) IBOutlet UILabel *displayName;
-@property (weak, nonatomic) IBOutlet UILabel *email;
 @property (weak, nonatomic) IBOutlet UILabel *gradeAndMajor;
 
 
