@@ -7,6 +7,7 @@ target 'NikoBracket' do
 
   # Pods for NikoBracket
   pod 'Parse'
+  pod 'Parse/UI'
 
   target 'NikoBracketTests' do
     inherit! :search_paths
