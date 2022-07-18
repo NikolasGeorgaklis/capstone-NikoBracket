@@ -206,12 +206,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-Ql-pPs">
+                                <rect key="frame" x="87" y="126" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="changePfp:" destination="0uD-Dq-iAC" eventType="touchUpInside" id="eZh-Nr-h88"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3IF-5M-eog"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="pfp" destination="9Dk-n6-5Kb" id="p3b-qO-Pl0"/>
+                        <outlet property="pfp" destination="9Dk-n6-5Kb" id="vUE-lY-TkQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tac-cc-rFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
