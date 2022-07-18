@@ -169,6 +169,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="displayName" destination="EKO-gF-owO" id="uyW-yW-5rC"/>
+                        <outlet property="email" destination="58L-Rx-Rl1" id="RQC-bq-n76"/>
+                        <outlet property="gradeAndMajor" destination="VJb-sE-TK0" id="1RK-hY-6UX"/>
                         <outlet property="pfp" destination="LAx-3g-zFl" id="siy-fK-Hkz"/>
                     </connections>
                 </viewController>
@@ -215,11 +218,23 @@
                                     <action selector="changePfp:" destination="0uD-Dq-iAC" eventType="touchUpInside" id="eZh-Nr-h88"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Noo-JW-HZR">
+                                <rect key="frame" x="311" y="5" width="79" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Done"/>
+                                <connections>
+                                    <action selector="doneEditing:" destination="0uD-Dq-iAC" eventType="touchUpInside" id="Igj-QP-k46"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3IF-5M-eog"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="displayNameField" destination="oCv-rf-Y5y" id="io6-1C-1Kd"/>
+                        <outlet property="gradeField" destination="wqK-nR-0QL" id="TcK-EP-tdE"/>
+                        <outlet property="majorField" destination="wqw-Y3-2Ev" id="8AU-Es-WpT"/>
                         <outlet property="pfp" destination="9Dk-n6-5Kb" id="vUE-lY-TkQ"/>
                     </connections>
                 </viewController>

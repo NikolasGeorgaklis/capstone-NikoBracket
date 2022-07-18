@@ -10,9 +10,12 @@
 #import "LoginViewController.h"
 #import <Foundation/Foundation.h>
 #import "Parse/PFImageView.h"
+#import "EditProfileViewController.h"
 
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <EditProfileViewControllerDelegate>
+
+@property (strong, nonatomic) PFUser *user;
 
 @end
 
@@ -21,12 +24,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PFUser *user = [PFUser currentUser];
+    self.user = [PFUser currentUser];
     
-    self.pfp.file = user[@"profilePicture"];
+    self.pfp.file = self.user[@"profilePicture"];
     [self.pfp loadInBackground];
-    
-    
 }
+
+- (void)updateProfile{
+    self.pfp.file = self.user[@"profilePicture"];
+    self.displayName.text = self.user[@"displayName"];
+    NSLog(@"gardee %@", self.user[@"grade"]);
+    self.gradeAndMajor.text = [NSString stringWithFormat:@"%@ %@ Major", self.user[@"grade"], self.user[@"major"]];
+
+    [self.pfp loadInBackground];
+}
+
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    EditProfileViewController *editVC = [segue destinationViewController];
+    editVC.delegate = self;
+}
+
 
 @end
