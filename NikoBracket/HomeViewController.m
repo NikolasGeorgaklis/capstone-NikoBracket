@@ -26,7 +26,7 @@
 
     self.homeTableView.delegate = self;
     self.homeTableView.dataSource = self;
-    self.homeTableView.rowHeight = 150;
+    self.homeTableView.rowHeight = 100;
 }
 - (IBAction)didTapLogOut:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -57,7 +57,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  5;
+    return 15;
 }
 
 @end

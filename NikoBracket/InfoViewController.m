@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view.
     self.infoTableView.delegate = self;
     self.infoTableView.dataSource = self;
-    self.infoTableView.rowHeight = 150;
+    self.infoTableView.rowHeight = 125;
 }
 
 /*
@@ -42,7 +42,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  5;
+    return  15;
 }
 
 @end
