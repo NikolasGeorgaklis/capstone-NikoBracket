@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EditProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-//@property (weak, nonatomic) IBOutlet PFImageView *pfp;
 @property (nonatomic, strong)id<EditProfileViewControllerDelegate> delegate;
 
 @end
