@@ -16,6 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet PFImageView *pfp;
 @property (strong, nonatomic) PFUser *user;
+@property (weak, nonatomic) IBOutlet UITextField *displayNameField;
+@property (weak, nonatomic) IBOutlet UITextField *gradeField;
+@property (weak, nonatomic) IBOutlet UITextField *majorField;
 
 @end
 
@@ -28,6 +31,11 @@
     
     self.pfp.file = self.user[@"profilePicture"];
     [self.pfp loadInBackground];
+    
+    self.displayNameField.text = self.user[@"displayName"];
+    self.gradeField.text = self.user[@"grade"];
+    self.majorField.text = self.user[@"major"];
+
     
 }
 
@@ -58,11 +66,14 @@
     [self resizeImage:editedImage withSize:self.pfp.bounds.size];
     self.pfp.image = editedImage;
     NSData *imageData = UIImagePNGRepresentation(self.pfp.image);
-    PFFileObject *imageFile = [PFFileObject fileObjectWithName:self.pfp.file.name data:imageData];
+    PFFileObject *imageFile = [PFFileObject fileObjectWithName:@"image.png" data:imageData]; //self.pfp.file.name
         
     self.user[@"profilePicture"] = imageFile;
-    [self.user saveInBackground];
-    
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error == nil) {
+            NSLog(@"it worked!");
+        }
+    }];
     
     
     // Dismiss UIImagePickerController to go back to your original view controller
@@ -82,6 +93,36 @@
     
     return newImage;
 }
+- (IBAction)doneEditing:(id)sender {
+    if (self.displayNameField.text.length == 0 || self.gradeField.text.length == 0 || self.majorField.text.length == 0) {     //check for empty fields
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                     message:@"Empty Field(s)"
+                                                     preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+         {}];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else {
+        //set values in parse
+        self.user[@"displayName"] = self.displayNameField.text;
+        self.user[@"grade"] = self.gradeField.text;
+        self.user[@"major"] = self.majorField.text;
+        [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (!error) {
+                NSLog(@"success");
+            }
+        }];
+
+        //set values in profileviewcontroller
+        [self.delegate updateProfile];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+
 
 
 
