@@ -79,7 +79,6 @@
     sceneDelegate.window.rootViewController = loginViewController;
 }
 
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeViewCell *homeViewCell = [self.homeTableView dequeueReusableCellWithIdentifier:@"HomeViewCell"];
     
