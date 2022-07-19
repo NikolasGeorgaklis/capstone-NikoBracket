@@ -379,6 +379,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="homeTableView" destination="1RL-2k-K8L" id="vzR-Bf-hav"/>
+                        <outlet property="logOutButton" destination="CzP-9O-E0n" id="dW4-C6-OEk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZj-8d-pEW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

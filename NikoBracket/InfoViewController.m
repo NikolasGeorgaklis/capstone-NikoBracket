@@ -11,6 +11,7 @@
 @interface InfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *infoTableView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 
 @end
@@ -23,6 +24,42 @@
     self.infoTableView.delegate = self;
     self.infoTableView.dataSource = self;
     self.infoTableView.rowHeight = 125;
+    
+    //Initialize UIRefreshControl
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.infoTableView insertSubview:self.refreshControl atIndex:0];
+
+}
+
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    
+
+    NSLog(@"refreshing");
+
+        // Create NSURL and NSURLRequest
+
+//        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+//                                                              delegate:nil
+//                                                         delegateQueue:[NSOperationQueue mainQueue]];
+//        session.configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+//
+//        NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+//                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//
+//           // ... Use the new data to update the data source ...
+//
+//           // Reload the tableView now that there is new data
+//            [self.infoTableView reloadData];
+//
+//           // Tell the refreshControl to stop spinning
+//            [refreshControl endRefreshing];
+//
+//        }];
+//
+//        [task resume];
+    [self.refreshControl endRefreshing];
+
 }
 
 /*
