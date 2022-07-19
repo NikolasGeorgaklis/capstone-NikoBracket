@@ -293,7 +293,7 @@
         <scene sceneID="yv7-gZ-UzZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZnK-EO-Maj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="0Zu-AV-LGr"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="0Zu-AV-LGr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4lY-Me-IdA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -312,7 +312,7 @@
         <scene sceneID="ivv-8P-2pg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jWK-sf-mZq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" id="UWT-oP-Bgz"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="newspaper" catalog="system" id="UWT-oP-Bgz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ZY-Yh-RKY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -331,7 +331,7 @@
         <scene sceneID="QgY-WP-g3b">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jQk-PT-oUi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="MvD-0g-7T7"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="MvD-0g-7T7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JQz-ND-wRE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -348,6 +348,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
