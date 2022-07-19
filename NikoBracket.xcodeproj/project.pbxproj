@@ -12,6 +12,9 @@
 		43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784728809521007E15E6 /* PhotoMapViewController.m */; };
 		43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */; };
 		43F2784E2881F12A007E15E6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784D2881F12A007E15E6 /* ProfileViewController.m */; };
+		43F278572886686C007E15E6 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F278562886686C007E15E6 /* HomeViewCell.m */; };
+		43F2785A28866A7A007E15E6 /* InfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2785928866A7A007E15E6 /* InfoViewCell.m */; };
+		43F2785D28866AEB007E15E6 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2785C28866AEB007E15E6 /* InfoViewController.m */; };
 		43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35B287DFC5800B30CC0 /* AppDelegate.m */; };
 		43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35E287DFC5800B30CC0 /* SceneDelegate.m */; };
 		43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF361287DFC5800B30CC0 /* ViewController.m */; };
@@ -56,6 +59,12 @@
 		43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		43F2784C2881F12A007E15E6 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		43F2784D2881F12A007E15E6 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		43F278552886686C007E15E6 /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
+		43F278562886686C007E15E6 /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
+		43F2785828866A7A007E15E6 /* InfoViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewCell.h; sourceTree = "<group>"; };
+		43F2785928866A7A007E15E6 /* InfoViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewCell.m; sourceTree = "<group>"; };
+		43F2785B28866AEB007E15E6 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		43F2785C28866AEB007E15E6 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		43FCF357287DFC5800B30CC0 /* NikoBracket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoBracket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FCF35A287DFC5800B30CC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43FCF35B287DFC5800B30CC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -167,6 +176,12 @@
 				43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */,
 				43F2784C2881F12A007E15E6 /* ProfileViewController.h */,
 				43F2784D2881F12A007E15E6 /* ProfileViewController.m */,
+				43F278552886686C007E15E6 /* HomeViewCell.h */,
+				43F278562886686C007E15E6 /* HomeViewCell.m */,
+				43F2785828866A7A007E15E6 /* InfoViewCell.h */,
+				43F2785928866A7A007E15E6 /* InfoViewCell.m */,
+				43F2785B28866AEB007E15E6 /* InfoViewController.h */,
+				43F2785C28866AEB007E15E6 /* InfoViewController.m */,
 			);
 			path = NikoBracket;
 			sourceTree = "<group>";
@@ -441,12 +456,15 @@
 			files = (
 				43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */,
 				43F2784E2881F12A007E15E6 /* ProfileViewController.m in Sources */,
+				43F2785D28866AEB007E15E6 /* InfoViewController.m in Sources */,
 				43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */,
+				43F278572886686C007E15E6 /* HomeViewCell.m in Sources */,
 				43FCF36D287DFC5900B30CC0 /* main.m in Sources */,
 				43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */,
 				43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */,
 				43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */,
 				43FCF396287E10C200B30CC0 /* LoginViewController.m in Sources */,
+				43F2785A28866A7A007E15E6 /* InfoViewCell.m in Sources */,
 				43DA21F1287F8E0000457AC4 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,8 +9,12 @@
 #import "HomeViewController.h"
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+#import "HomeViewCell.h"
 
-@interface HomeViewController ()
+@interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *homeTableView;
+
 
 @end
 
@@ -19,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    self.homeTableView.delegate = self;
+    self.homeTableView.dataSource = self;
+    self.homeTableView.rowHeight = 150;
 }
 - (IBAction)didTapLogOut:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -41,5 +49,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    HomeViewCell *homeViewCell = [self.homeTableView dequeueReusableCellWithIdentifier:@"HomeViewCell"];
+    
+    return homeViewCell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return  5;
+}
 
 @end
