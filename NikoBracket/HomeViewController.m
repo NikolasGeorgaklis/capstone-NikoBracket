@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 
     self.homeTableView.delegate = self;
     self.homeTableView.dataSource = self;
@@ -36,6 +37,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.homeTableView insertSubview:self.refreshControl atIndex:0];
+    
 }
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {

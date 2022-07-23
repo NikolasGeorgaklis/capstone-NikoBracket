@@ -15,6 +15,7 @@
 		43F278572886686C007E15E6 /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F278562886686C007E15E6 /* HomeViewCell.m */; };
 		43F2785A28866A7A007E15E6 /* InfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2785928866A7A007E15E6 /* InfoViewCell.m */; };
 		43F2785D28866AEB007E15E6 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2785C28866AEB007E15E6 /* InfoViewController.m */; };
+		43F2785F2889F8D3007E15E6 /* teams.json in Resources */ = {isa = PBXBuildFile; fileRef = 43F2785E2889F8D3007E15E6 /* teams.json */; };
 		43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35B287DFC5800B30CC0 /* AppDelegate.m */; };
 		43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF35E287DFC5800B30CC0 /* SceneDelegate.m */; };
 		43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43FCF361287DFC5800B30CC0 /* ViewController.m */; };
@@ -65,6 +66,7 @@
 		43F2785928866A7A007E15E6 /* InfoViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewCell.m; sourceTree = "<group>"; };
 		43F2785B28866AEB007E15E6 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		43F2785C28866AEB007E15E6 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		43F2785E2889F8D3007E15E6 /* teams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = teams.json; path = ../../../Downloads/teams.json; sourceTree = "<group>"; };
 		43FCF357287DFC5800B30CC0 /* NikoBracket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NikoBracket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FCF35A287DFC5800B30CC0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43FCF35B287DFC5800B30CC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		43FCF359287DFC5800B30CC0 /* NikoBracket */ = {
 			isa = PBXGroup;
 			children = (
+				43F2785E2889F8D3007E15E6 /* teams.json */,
 				43FCF35A287DFC5800B30CC0 /* AppDelegate.h */,
 				43FCF35B287DFC5800B30CC0 /* AppDelegate.m */,
 				43FCF35D287DFC5800B30CC0 /* SceneDelegate.h */,
@@ -324,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F2785F2889F8D3007E15E6 /* teams.json in Resources */,
 				43FCF36A287DFC5900B30CC0 /* LaunchScreen.storyboard in Resources */,
 				43FCF367287DFC5900B30CC0 /* Assets.xcassets in Resources */,
 				43FCF365287DFC5800B30CC0 /* Main.storyboard in Resources */,
