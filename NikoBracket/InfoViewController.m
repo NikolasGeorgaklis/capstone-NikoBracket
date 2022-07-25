@@ -8,6 +8,7 @@
 #import "InfoViewController.h"
 #import "InfoViewCell.h"
 #import "UIImageView+AFNetworking.h"
+static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/scores/json/Tournament/2022?key=";
 
 @interface InfoViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -48,10 +49,15 @@
     for (int i = 0; i < temp.count; i++) {
         self.teams[temp[i][@"Key"]] = temp[i];
     }
-    
+    //pull api key from Keys.plist
+    NSString *pListPath = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: pListPath];
+    NSString *key = [dict objectForKey: @"API_Key"];
     //parse 1st round matchups from json
     NSError *error;
-    NSString *url_string = [NSString stringWithFormat: @"https://api.sportsdata.io/v3/cbb/scores/json/Tournament/2022?key=003d3b7e4d724cbeb785ca7d4aded519"];
+    NSString *url_string = [NSString stringWithFormat: @"%@%@", kMatchUpsEndpoint, key];
+    
+
     data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
     NSMutableDictionary *tempDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     self.matchups = [[NSMutableArray alloc] init];
