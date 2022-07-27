@@ -53,11 +53,11 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     NSString *pListPath = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: pListPath];
     NSString *key = [dict objectForKey: @"API_Key"];
+    
     //parse 1st round matchups from json
     NSError *error;
     NSString *url_string = [NSString stringWithFormat: @"%@%@", kMatchUpsEndpoint, key];
     
-
     data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
     NSMutableDictionary *tempDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     self.matchups = [[NSMutableArray alloc] init];
@@ -66,8 +66,7 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     
     //isolate 1st round matchups given all matchups
     for (NSDictionary *game in allMatchups) {
-        if ([game[@"Day"] containsString:@"2022-03-17"]
-            || [game[@"Day"] containsString:@"2022-03-18"]){
+        if ([game[@"Day"] containsString:@"2022-03-17"] || [game[@"Day"] containsString:@"2022-03-18"]){
             [self.matchups addObject:game];
         }
         
