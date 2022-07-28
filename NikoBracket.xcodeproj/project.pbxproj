@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		158449B9F010F7B81BBE6CAE /* Pods_NikoBracket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AB6547BC4AA7125ECBD228 /* Pods_NikoBracket.framework */; };
-		4352ECF2288F26B000F64021 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4352ECF1288F26B000F64021 /* Keys.plist */; };
+		437309362892013C00323DCE /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 437309352892013C00323DCE /* Keys.plist */; };
+		43D3078D2890ABA3001573F0 /* CreateBracketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3078C2890ABA3001573F0 /* CreateBracketViewController.m */; };
+		43D307902890ADDD001573F0 /* CreateBracketViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3078F2890ADDD001573F0 /* CreateBracketViewCell.m */; };
 		43DA21F1287F8E0000457AC4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA21F0287F8E0000457AC4 /* HomeViewController.m */; };
 		43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784728809521007E15E6 /* PhotoMapViewController.m */; };
 		43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */; };
@@ -53,7 +55,11 @@
 		2B63A441EB2844F59AFC5797 /* Pods-NikoBracket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracket.debug.xcconfig"; path = "Target Support Files/Pods-NikoBracket/Pods-NikoBracket.debug.xcconfig"; sourceTree = "<group>"; };
 		2C149748E6F469F6F4E158C2 /* Pods_NikoBracketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoBracketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C25FB1B6E0BB80ED29971A3 /* Pods-NikoBracketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracketTests.release.xcconfig"; path = "Target Support Files/Pods-NikoBracketTests/Pods-NikoBracketTests.release.xcconfig"; sourceTree = "<group>"; };
-		4352ECF1288F26B000F64021 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		437309352892013C00323DCE /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		43D3078B2890ABA3001573F0 /* CreateBracketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateBracketViewController.h; sourceTree = "<group>"; };
+		43D3078C2890ABA3001573F0 /* CreateBracketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateBracketViewController.m; sourceTree = "<group>"; };
+		43D3078E2890ADDD001573F0 /* CreateBracketViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateBracketViewCell.h; sourceTree = "<group>"; };
+		43D3078F2890ADDD001573F0 /* CreateBracketViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateBracketViewCell.m; sourceTree = "<group>"; };
 		43DA21EF287F8E0000457AC4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		43DA21F0287F8E0000457AC4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		43F2784628809521007E15E6 /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
@@ -170,7 +176,6 @@
 				43FCF366287DFC5900B30CC0 /* Assets.xcassets */,
 				43FCF368287DFC5900B30CC0 /* LaunchScreen.storyboard */,
 				43FCF36B287DFC5900B30CC0 /* Info.plist */,
-				4352ECF1288F26B000F64021 /* Keys.plist */,
 				43FCF36C287DFC5900B30CC0 /* main.m */,
 				43FCF394287E10C200B30CC0 /* LoginViewController.h */,
 				43FCF395287E10C200B30CC0 /* LoginViewController.m */,
@@ -188,6 +193,11 @@
 				43F2785928866A7A007E15E6 /* InfoViewCell.m */,
 				43F2785B28866AEB007E15E6 /* InfoViewController.h */,
 				43F2785C28866AEB007E15E6 /* InfoViewController.m */,
+				43D3078B2890ABA3001573F0 /* CreateBracketViewController.h */,
+				43D3078C2890ABA3001573F0 /* CreateBracketViewController.m */,
+				43D3078E2890ADDD001573F0 /* CreateBracketViewCell.h */,
+				43D3078F2890ADDD001573F0 /* CreateBracketViewCell.m */,
+				437309352892013C00323DCE /* Keys.plist */,
 			);
 			path = NikoBracket;
 			sourceTree = "<group>";
@@ -334,7 +344,7 @@
 				43FCF36A287DFC5900B30CC0 /* LaunchScreen.storyboard in Resources */,
 				43FCF367287DFC5900B30CC0 /* Assets.xcassets in Resources */,
 				43FCF365287DFC5800B30CC0 /* Main.storyboard in Resources */,
-				4352ECF2288F26B000F64021 /* Keys.plist in Resources */,
+				437309362892013C00323DCE /* Keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +472,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D3078D2890ABA3001573F0 /* CreateBracketViewController.m in Sources */,
+				43D307902890ADDD001573F0 /* CreateBracketViewCell.m in Sources */,
 				43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */,
 				43F2784E2881F12A007E15E6 /* ProfileViewController.m in Sources */,
 				43F2785D28866AEB007E15E6 /* InfoViewController.m in Sources */,
