@@ -10,13 +10,13 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "HomeViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
-
+@property (strong, nonatomic)NSArray *accountsArray;
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
-
+@property (strong, nonatomic) PFUser *user;
 
 @end
 
@@ -25,14 +25,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.user = [PFUser currentUser];
 
     self.homeTableView.delegate = self;
     self.homeTableView.dataSource = self;
     self.homeTableView.rowHeight = 100;
-    
-    self.logOutButton.tintColor = [UIColor systemPinkColor];
-    
+    [self getAccounts];
+        
     //Initialize UIRefreshControl
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -40,55 +39,36 @@
     
 }
 
-- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+-(void)getAccounts{
+    PFQuery *query = [PFUser query];
+    [query orderByDescending:@"correctPicks"];
     
-    NSLog(@"refreshing");
+    query.limit = 20;
 
-        // Create NSURL and NSURLRequest
-
-//        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-//                                                              delegate:nil
-//                                                         delegateQueue:[NSOperationQueue mainQueue]];
-//        session.configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-//
-//        NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-//                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//
-//           // ... Use the new data to update the data source ...
-//
-//           // Reload the tableView now that there is new data
-//            [self.homeTableView reloadData];
-//
-//           // Tell the refreshControl to stop spinning
-//            [refreshControl endRefreshing];
-//
-//        }];
-//
-//        [task resume];
-    [self.refreshControl endRefreshing];
-
-}
-
-- (IBAction)didTapLogOut:(id)sender {
-    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
-        NSLog(@"Logged out");
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *accounts, NSError *error) {
+        if (accounts != nil) {
+            // do something with the array of object returned by the call
+            self.accountsArray = accounts;
+            [self.homeTableView reloadData];
+            NSLog(@"%@", self.accountsArray);
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.refreshControl endRefreshing];
     }];
-    SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    sceneDelegate.window.rootViewController = loginViewController;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    HomeViewCell *homeViewCell = [self.homeTableView dequeueReusableCellWithIdentifier:@"HomeViewCell"];
+    HomeViewCell *cell = [self.homeTableView dequeueReusableCellWithIdentifier:@"HomeViewCell"];
     
-    return homeViewCell;
+    cell.user = self.accountsArray[indexPath.row];
+    [cell setUserInfo];
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 15;
+    return self.accountsArray.count;
 }
 
 @end
