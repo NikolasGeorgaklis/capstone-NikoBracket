@@ -209,7 +209,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-2o-Wgl">
-                                <rect key="frame" x="291" y="391" width="71" height="29"/>
+                                <rect key="frame" x="273" y="391" width="108" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -237,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5/10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAs-AZ-2Or">
-                                <rect key="frame" x="156" y="381" width="82" height="48"/>
+                                <rect key="frame" x="128" y="381" width="137" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -269,10 +269,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="correctPicksAsPercent" destination="5MD-2o-Wgl" id="Jt1-x6-arj"/>
+                        <outlet property="correctPicksLabel" destination="ZAs-AZ-2Or" id="5wu-LI-N8R"/>
                         <outlet property="displayName" destination="EKO-gF-owO" id="uyW-yW-5rC"/>
                         <outlet property="emailLabel" destination="58L-Rx-Rl1" id="Igb-Us-ygJ"/>
                         <outlet property="gradeAndMajor" destination="VJb-sE-TK0" id="1RK-hY-6UX"/>
                         <outlet property="pfp" destination="LAx-3g-zFl" id="siy-fK-Hkz"/>
+                        <outlet property="rank" destination="SCf-cl-V4s" id="dfd-aS-1gA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpB-id-8P8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
