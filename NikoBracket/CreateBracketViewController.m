@@ -9,6 +9,12 @@
 #import "Parse/Parse.h"
 #import "UIImageView+AFNetworking.h"
 static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/scores/json/Tournament/2022?key=";
+static const NSInteger kRound1 = 0;
+static const NSInteger kRound2 = 1;
+static const NSInteger kRound3 = 2;
+static const NSInteger kRound4 = 3;
+static const NSInteger kSemiFinal = 4;
+static const NSInteger kFinal = 5;
 
 @interface CreateBracketViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -224,34 +230,34 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
 
 
     switch (self.roundControl.selectedSegmentIndex) {
-        case 0:
+        case kRound1:
             currentWestMatchups = self.westMatchups;
             currentSouthMatchups = self.southMatchups;
             currentEastMatchups = self.eastMatchups;
             currentMidwestMatchups = self.midwestMatchups;
             break;
-        case 1:
+        case kRound2:
             currentWestMatchups = self.westPicks[1];
             currentSouthMatchups = self.southPicks[1];
             currentEastMatchups = self.eastPicks[1];
             currentMidwestMatchups = self.midwestPicks[1];
             break;
-        case 2:
+        case kRound3:
             currentWestMatchups = self.westPicks[2];
             currentSouthMatchups = self.southPicks[2];
             currentEastMatchups = self.eastPicks[2];
             currentMidwestMatchups = self.midwestPicks[2];
             break;
-        case 3:
+        case kRound4:
             currentWestMatchups = self.westPicks[3];
             currentSouthMatchups = self.southPicks[3];
             currentEastMatchups = self.eastPicks[3];
             currentMidwestMatchups = self.midwestPicks[3];
             break;
-        case 4:
+        case kSemiFinal:
             semisMatchups = self.finalsPicks[0];
             break;
-        case 5:
+        case kFinal:
             championship = self.finalsPicks[1];
             break;
         default:
@@ -350,22 +356,22 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
    
     switch (self.roundControl.selectedSegmentIndex) {
-        case 0:
+        case kRound1:
             return 8;
             break;
-        case 1:
+        case kRound2:
             return 4;
             break;
-        case 2:
+        case kRound3:
             return 2;
             break;
-        case 3:
+        case kRound4:
             return 1;
             break;
-        case 4:
+        case kSemiFinal:
             return 2;
             break;
-        default:
+        case kFinal:
             return 1;
             break;
     }
@@ -427,6 +433,7 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     NSMutableArray *round4 = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < round1.count - 1; i+=2) {
+        //each "game" object contains 3 elements: two 3-5 letter abbreviations, one for the home team, one for the away team, and the third element is a 0 or 1 indicating the user’s choice for who they believe will win the game
         NSArray *game = round1[i];
         NSArray *game2 = round1[i+1];
 
@@ -476,12 +483,32 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
         }
     }
     
-    matchups[1] = round2;
-    matchups[2] = round3;
-    matchups[3] = round4;
+    switch (matchups.count) {
+        case 0:
+            [matchups addObject:round2];
+            [matchups addObject:round3];
+            [matchups addObject:round4];
+            break;
+        case 1:
+            matchups[1] = round2;
+            [matchups addObject:round3];
+            [matchups addObject:round4];
+            break;
+        case 2:
+            matchups[1] = round2;
+            matchups[2] = round3;
+            [matchups addObject:round4];
+            break;
+        default:
+            matchups[1] = round2;
+            matchups[2] = round3;
+            matchups[3] = round4;
+            break;
+    }
     
     return matchups;
 }
+
 - (NSMutableArray *) initializeUserFinalsBracket:(NSMutableArray *) finalsMatchups {
     NSMutableArray *final_4 = [[NSMutableArray alloc] init];
     NSMutableArray *championship = [[NSMutableArray alloc] init];
@@ -519,7 +546,12 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     }
     
     //add final4 to finals matchups
-    finalsMatchups[0] = final_4;
+    if (finalsMatchups.count > 0) {
+        finalsMatchups[0] = final_4;
+    }
+    else {
+        [finalsMatchups addObject:final_4];
+    }
     
     //championship
     NSArray *semisGame1 = final_4[0];
@@ -537,7 +569,13 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
         [championship addObject:finalMatchup];
     }
     
-    finalsMatchups[1] = championship;
+    //add championship to finals matchups
+    if (finalsMatchups.count == 2) {
+        finalsMatchups[1] = championship;
+    }
+    else {
+        [finalsMatchups addObject:championship];
+    }
 
     return finalsMatchups;
 }
