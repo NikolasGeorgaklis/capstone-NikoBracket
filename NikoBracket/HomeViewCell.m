@@ -6,12 +6,26 @@
 //
 
 #import "HomeViewCell.h"
+#import "UIImageView+AFNetworking.h"
+#import "Parse/PFImageView.h"
+#import "Parse.h"
 
 @implementation HomeViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+-(void)setUserInfo {
+    PFFileObject *file = self.user[@"profilePicture"];
+    NSURL *url = [NSURL URLWithString:file.url];
+    if (file) {
+        [self.profilePicture setImageWithURL:url];
+    }
+    self.displayName.text = self.user[@"displayName"];
+    self.rank.text = [NSString stringWithFormat:@"Rank: %@", [self.user[@"rank"] stringValue]];
+    self.correctOverTotal.text = [self.user[@"correctPicks"] stringValue];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -21,3 +35,4 @@
 }
 
 @end
+
