@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import <Foundation/Foundation.h>
 #import "Parse/PFImageView.h"
+#import "SceneDelegate.h"
 
 @interface EditProfileViewController ()
 
@@ -26,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.user = [PFUser currentUser];
     
     self.pfp.file = self.user[@"profilePicture"];
@@ -35,6 +35,8 @@
     self.displayNameField.text = self.user[@"displayName"];
     self.gradeField.text = self.user[@"grade"];
     self.majorField.text = self.user[@"major"];
+    
+    self.pfp.layer.cornerRadius = self.pfp.frame.size.height/2.0;
 
     
 }
@@ -44,16 +46,24 @@
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
 
-    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        NSLog(@"Camera 🚫 available so we will use photo library instead");
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Add profile picture" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Take Picture With Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        else {
+            imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    }]];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Choose From Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    }]];
+    [[actionSheet popoverPresentationController] setSourceRect:self.view.bounds];
+    [[actionSheet popoverPresentationController] setSourceView:self.view];
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:actionSheet animated:YES completion:^{}];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -62,21 +72,18 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
-    // Do something with the images (based on your use case)
+    // Resize image and store in parse
     [self resizeImage:editedImage withSize:self.pfp.bounds.size];
     self.pfp.image = editedImage;
-    NSData *imageData = UIImagePNGRepresentation(self.pfp.image);
-    PFFileObject *imageFile = [PFFileObject fileObjectWithName:@"image.png" data:imageData]; //self.pfp.file.name
+    NSData *imageData = UIImagePNGRepresentation(editedImage);
+    PFFileObject *imageFile = [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+    self.pfp.file = imageFile;
         
     self.user[@"profilePicture"] = imageFile;
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error == nil) {
-            NSLog(@"it worked!");
-        }
     }];
     
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
+    // Dismiss UIImagePickerController
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -110,31 +117,24 @@
         self.user[@"grade"] = self.gradeField.text;
         self.user[@"major"] = self.majorField.text;
         [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (!error) {
-                NSLog(@"success");
-            }
         }];
 
         //set values in profileviewcontroller
-        [self.delegate updateProfile];
+        [self.delegate updateProfile:self.pfp];
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
+- (IBAction)didTapLogOut:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+    SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
 
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    sceneDelegate.window.rootViewController = loginViewController;
 }
-*/
 
 @end
