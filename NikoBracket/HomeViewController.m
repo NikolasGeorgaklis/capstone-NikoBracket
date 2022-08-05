@@ -21,8 +21,10 @@ static int kRound4 = 3;
 static int kSemiFinal = 4;
 static int kFinal = 5;
 
-@interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (strong, nonatomic)NSArray *accountsArray;
+@property (strong, nonatomic)NSMutableArray *filteredAccounts;
+@property BOOL isFiltered;
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) PFUser *user;
@@ -34,6 +36,9 @@ static int kFinal = 5;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.user = [PFUser currentUser];
+    
+    self.isFiltered = false;
+    self.searchBar.delegate = self;
 
     self.homeTableView.delegate = self;
     self.homeTableView.dataSource = self;
@@ -44,6 +49,25 @@ static int kFinal = 5;
     [self.refreshControl addTarget:self action:@selector(getAccounts) forControlEvents:UIControlEventValueChanged];
     [self.homeTableView insertSubview:self.refreshControl atIndex:0];
     
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length == 0) {
+        self.isFiltered = false;
+    }
+    else{
+        self.isFiltered = true;
+        self.filteredAccounts = [[NSMutableArray alloc] init];
+        
+        for (PFUser *account in self.accountsArray) {
+            NSRange nameRange = [account[@"displayName"] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (nameRange.location != NSNotFound) {
+                [self.filteredAccounts addObject:account];
+            }
+        }
+    }
+    
+    [self.homeTableView reloadData];
 }
 
 -(void)getAccounts{
@@ -72,13 +96,24 @@ static int kFinal = 5;
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     HomeViewCell *cell = [self.homeTableView dequeueReusableCellWithIdentifier:@"HomeViewCell"];
-    cell.user = self.accountsArray[indexPath.row];
+    if (self.isFiltered) {
+        cell.user = self.filteredAccounts[indexPath.row];
+    }
+    else {
+        cell.user = self.accountsArray[indexPath.row];
+    }
+    
     [cell setUserInfo];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.accountsArray.count;
+    if (self.isFiltered) {
+        return self.filteredAccounts.count;
+    }
+    else{
+        return self.accountsArray.count;
+    }
 }
 
 - (void)getUserBracketStats:(NSInteger *)round withUser:(PFUser *)user withRank: (NSNumber *) rank{
