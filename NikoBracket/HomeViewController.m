@@ -11,8 +11,8 @@
 #import "Parse/Parse.h"
 #import "HomeViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "viewBracketViewController.h"
 
-static NSMutableArray *teamsInTournament;
 static int numOfPastGames;
 static int kRound1 = 0;
 static int kRound2 = 1;
@@ -28,6 +28,8 @@ static int kFinal = 5;
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) PFUser *user;
+@property (strong, nonatomic) NSMutableArray *teamsInTournament;
+@property (strong, nonatomic) NSMutableDictionary *teams;
 
 @end
 
@@ -39,6 +41,15 @@ static int kFinal = 5;
     
     self.isFiltered = false;
     self.searchBar.delegate = self;
+    
+    // parse teams json file
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"teams" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    self.teams = [[NSMutableDictionary alloc] init];
+    NSArray *temp = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    for (int i = 0; i < temp.count; i++) {
+        self.teams[temp[i][@"Key"]] = temp[i];
+    }
 
     self.homeTableView.delegate = self;
     self.homeTableView.dataSource = self;
@@ -102,7 +113,8 @@ static int kFinal = 5;
     else {
         cell.user = self.accountsArray[indexPath.row];
     }
-    
+    NSString *selectedChampion = cell.user[@"finalsPicks"][1][0][[cell.user[@"finalsPicks"][1][0][2] intValue]];
+    [cell.selectedChampionLogo setImageWithURL:[NSURL URLWithString:self.teams[selectedChampion][@"TeamLogoUrl"]]];
     [cell setUserInfo];
     return cell;
 }
@@ -130,9 +142,9 @@ static int kFinal = 5;
     NSArray *allMatchups = tempDictionary[@"Games"];
 
     //put 6 arrays into teamsInTournament, one for each round
-    teamsInTournament = [[NSMutableArray alloc] init];
+    self.teamsInTournament = [[NSMutableArray alloc] init];
     for (int i = 0; i<6; i++) {
-        [teamsInTournament addObject:[[NSMutableArray alloc] init]];
+        [self.teamsInTournament addObject:[[NSMutableArray alloc] init]];
     }
 
     //separate teams by round; round key returns inaccurate data in free version of API so we separate rounds by date
@@ -140,36 +152,36 @@ static int kFinal = 5;
         //round 1 happened 3/17-18 in 2022
         if ([game[@"Day"] containsString:@"2022-03-17"]
             || [game[@"Day"] containsString:@"2022-03-18"]){
-            [teamsInTournament[0] addObject:game[@"HomeTeam"]];
-            [teamsInTournament[0] addObject:game[@"AwayTeam"]];
+            [self.teamsInTournament[0] addObject:game[@"HomeTeam"]];
+            [self.teamsInTournament[0] addObject:game[@"AwayTeam"]];
         }
         //round 2 happened 3/19-20 in 2022
         if ([game[@"Day"] containsString:@"2022-03-19"]
             || [game[@"Day"] containsString:@"2022-03-20"]){
-            [teamsInTournament[1] addObject:game[@"HomeTeam"]];
-            [teamsInTournament[1] addObject:game[@"AwayTeam"]];
+            [self.teamsInTournament[1] addObject:game[@"HomeTeam"]];
+            [self.teamsInTournament[1] addObject:game[@"AwayTeam"]];
         }
         //round 3 happened 3/24-25 in 2022
         if ([game[@"Day"] containsString:@"2022-03-24"]
             || [game[@"Day"] containsString:@"2022-03-25"]){
-            [teamsInTournament[2] addObject:game[@"HomeTeam"]];
-            [teamsInTournament[2] addObject:game[@"AwayTeam"]];
+            [self.teamsInTournament[2] addObject:game[@"HomeTeam"]];
+            [self.teamsInTournament[2] addObject:game[@"AwayTeam"]];
         }
         //round 4 happened 3/26-27 in 2022
         if ([game[@"Day"] containsString:@"2022-03-26"]
             || [game[@"Day"] containsString:@"2022-03-27"]){
-            [teamsInTournament[3] addObject:game[@"HomeTeam"]];
-            [teamsInTournament[3] addObject:game[@"AwayTeam"]];
+            [self.teamsInTournament[3] addObject:game[@"HomeTeam"]];
+            [self.teamsInTournament[3] addObject:game[@"AwayTeam"]];
         }
         //semifinals/final4 happened 4/2 in 2022
         if ([game[@"Day"] containsString:@"2022-04-02"]){
-            [teamsInTournament[4] addObject:game[@"HomeTeam"]];
-            [teamsInTournament[4] addObject:game[@"AwayTeam"]];
+            [self.teamsInTournament[4] addObject:game[@"HomeTeam"]];
+            [self.teamsInTournament[4] addObject:game[@"AwayTeam"]];
         }
         //championship happened 4/4 in 2022
         if ([game[@"Day"] containsString:@"2022-04-04"]){
-            [teamsInTournament[5] addObject:game[@"HomeTeam"]];
-            [teamsInTournament[5] addObject:game[@"AwayTeam"]];
+            [self.teamsInTournament[5] addObject:game[@"HomeTeam"]];
+            [self.teamsInTournament[5] addObject:game[@"AwayTeam"]];
         }
     }
 
@@ -187,37 +199,37 @@ static int kFinal = 5;
     for (int i = 1; i<=round; i++) {
         if (i < 4) {//4 is semi finals round
             for (NSArray *game in westPicks[i]){
-                if ([teamsInTournament[i] containsObject:game[0]] &&  [teamsInTournament[i] containsObject:game[1]]){
+                if ([self.teamsInTournament[i] containsObject:game[0]] &&  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks+=2;
                 }
-                else if ([teamsInTournament[i] containsObject:game[0]] ||  [teamsInTournament[i] containsObject:game[1]]){
+                else if ([self.teamsInTournament[i] containsObject:game[0]] ||  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks++;
                 }
                 numOfPastGames++;
             }
             for (NSArray *game in southPicks[i]){
-                if ([teamsInTournament[i] containsObject:game[0]] &&  [teamsInTournament[i] containsObject:game[1]]){
+                if ([self.teamsInTournament[i] containsObject:game[0]] &&  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks+=2;
                 }
-                else if ([teamsInTournament[i] containsObject:game[0]] ||  [teamsInTournament[i] containsObject:game[1]]){
+                else if ([self.teamsInTournament[i] containsObject:game[0]] ||  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks++;
                 }
                 numOfPastGames++;
             }
             for (NSArray *game in eastPicks[i]){
-                if ([teamsInTournament[i] containsObject:game[0]] &&  [teamsInTournament[i] containsObject:game[1]]){
+                if ([self.teamsInTournament[i] containsObject:game[0]] &&  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks+=2;
                 }
-                else if ([teamsInTournament[i] containsObject:game[0]] ||  [teamsInTournament[i] containsObject:game[1]]){
+                else if ([self.teamsInTournament[i] containsObject:game[0]] ||  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks++;
                 }
                 numOfPastGames++;
             }
             for (NSArray *game in midwestPicks[i]){
-                if ([teamsInTournament[i] containsObject:game[0]] &&  [teamsInTournament[i] containsObject:game[1]]){
+                if ([self.teamsInTournament[i] containsObject:game[0]] &&  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks+=2;
                 }
-                else if ([teamsInTournament[i] containsObject:game[0]] ||  [teamsInTournament[i] containsObject:game[1]]){
+                else if ([self.teamsInTournament[i] containsObject:game[0]] ||  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks++;
                 }
                 numOfPastGames++;
@@ -225,10 +237,10 @@ static int kFinal = 5;
         }
         else {
             for (NSArray *game in finalsPicks[i-4]){
-                if ([teamsInTournament[i] containsObject:game[0]] &&  [teamsInTournament[i] containsObject:game[1]]){
+                if ([self.teamsInTournament[i] containsObject:game[0]] &&  [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks+=2;
                 }
-                else if ([teamsInTournament[i] containsObject:game[0]] || [teamsInTournament[i] containsObject:game[1]]){
+                else if ([self.teamsInTournament[i] containsObject:game[0]] || [self.teamsInTournament[i] containsObject:game[1]]){
                     correctPicks++;
                 }
                 numOfPastGames++;
@@ -252,6 +264,30 @@ static int kFinal = 5;
         
     //store data in parse using cloud code
     [PFCloud callFunctionInBackground:@"rankUsers" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {}];
+}
+
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    viewBracketViewController *viewBracketVC = [segue destinationViewController];
+    NSIndexPath *indexPath = [self.homeTableView indexPathForCell:sender];
+    
+    HomeViewCell *cell = [self.homeTableView cellForRowAtIndexPath:indexPath];
+    viewBracketVC.user = cell.user;
+    viewBracketVC.finals = cell.user[@"finalsPicks"];
+    NSString *westChampion = viewBracketVC.finals[0][0][0];
+    NSString *eastChampion = viewBracketVC.finals[0][0][1];
+    NSString *southChampion = viewBracketVC.finals[0][1][0];
+    NSString *midwestChampion = viewBracketVC.finals[0][1][1];
+
+    viewBracketVC.teamLogoURLs = [[NSMutableDictionary alloc] init];
+    viewBracketVC.teamLogoURLs[westChampion] = self.teams[westChampion][@"TeamLogoUrl"];
+    viewBracketVC.teamLogoURLs[eastChampion] = self.teams[eastChampion][@"TeamLogoUrl"];
+    viewBracketVC.teamLogoURLs[southChampion] = self.teams[southChampion][@"TeamLogoUrl"];
+    viewBracketVC.teamLogoURLs[midwestChampion] = self.teams[midwestChampion][@"TeamLogoUrl"];
+
 }
 
 
