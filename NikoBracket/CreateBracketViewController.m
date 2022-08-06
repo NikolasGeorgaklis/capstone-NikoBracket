@@ -637,9 +637,11 @@ static const NSInteger kFinal = 5;
                                                      message:@"You have created your March Madness Bracket."
                                                      preferredStyle:UIAlertControllerStyleAlert];
 
-        UIAlertAction *done = [UIAlertAction actionWithTitle:@"View Bracket" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+        UIAlertAction *done = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
          {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+            self.tabBarController.tabBar.hidden = NO;
+
         }];
         [alert addAction:done];
         [self presentViewController:alert animated:YES completion:nil];
