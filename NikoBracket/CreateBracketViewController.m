@@ -645,7 +645,8 @@ static const NSInteger kFinal = 5;
         }];
         [alert addAction:done];
         [self presentViewController:alert animated:YES completion:nil];
-        
+        self.user[@"createdBracket"] = @(true);
+        [self.user saveInBackground];
     }];
     [alert addAction:ok];
     
