@@ -51,7 +51,6 @@
             // do something with the array of object returned by the call
             self.accountsArray = accounts;
             [self.homeTableView reloadData];
-            NSLog(@"%@", self.accountsArray);
         } else {
             NSLog(@"%@", error.localizedDescription);
         }

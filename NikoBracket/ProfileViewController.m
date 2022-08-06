@@ -27,12 +27,13 @@ static int numOfPastGames;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.user = [PFUser currentUser];
+    [self.user fetch];
     self.pfp.file = self.user[@"profilePicture"];
     self.emailLabel.text = self.user[@"email"];
     self.displayName.text = self.user[@"displayName"];
-    self.gradeAndMajor.text = [NSString stringWithFormat:@"%@ %@ Major", self.user[@"grade"], self.user[@"major"]];
+    self.gradeAndMajor.text = self.user[@"grade"] == NULL ? @"Grade Major" : [NSString stringWithFormat:@"%@ %@ Major", self.user[@"grade"], self.user[@"major"]];
     self.pfp.layer.cornerRadius = self.pfp.frame.size.height/2.0;
-    if (self.user[@"createdBracket"] == true){
+    if ([self.user[@"createdBracket"] isEqual:@(true)]){
         [self getUserBracketStats:5];//final round is round 5
         self.rank.text = [self.user[@"rank"] stringValue];
         self.correctPicksLabel.text = self.user[@"ratio"];
@@ -45,6 +46,7 @@ static int numOfPastGames;
     }
 
     [self.pfp loadInBackground];
+   
 }
 
 - (void)updateProfile:(PFImageView *)pfp{
