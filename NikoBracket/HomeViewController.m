@@ -53,7 +53,7 @@ static int kFinal = 5;
 
     self.homeTableView.delegate = self;
     self.homeTableView.dataSource = self;
-    self.homeTableView.rowHeight = 100;
+    self.homeTableView.rowHeight = 80;
     [self getAccounts];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
