@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol EditProfileViewControllerDelegate
 
--(void)updateProfile;
+-(void)updateProfile: (PFImageView *)pfp;
 
 @end
 

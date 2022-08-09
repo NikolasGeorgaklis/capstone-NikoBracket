@@ -54,6 +54,7 @@
 		2C149748E6F469F6F4E158C2 /* Pods_NikoBracketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoBracketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C25FB1B6E0BB80ED29971A3 /* Pods-NikoBracketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracketTests.release.xcconfig"; path = "Target Support Files/Pods-NikoBracketTests/Pods-NikoBracketTests.release.xcconfig"; sourceTree = "<group>"; };
 		43C83154289D925E0009E025 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = ../../Keys.plist; sourceTree = "<group>"; };
+
 		43DA21EF287F8E0000457AC4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		43DA21F0287F8E0000457AC4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		43F2784628809521007E15E6 /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 				43F2785B28866AEB007E15E6 /* InfoViewController.h */,
 				43F2785C28866AEB007E15E6 /* InfoViewController.m */,
 				43C83154289D925E0009E025 /* Keys.plist */,
+
 			);
 			path = NikoBracket;
 			sourceTree = "<group>";
@@ -331,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C83155289D925E0009E025 /* Keys.plist in Resources */,
+
 				43F2785F2889F8D3007E15E6 /* teams.json in Resources */,
 				43FCF36A287DFC5900B30CC0 /* LaunchScreen.storyboard in Resources */,
 				43FCF367287DFC5900B30CC0 /* Assets.xcassets in Resources */,
@@ -462,6 +465,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D3078D2890ABA3001573F0 /* CreateBracketViewController.m in Sources */,
+				43D307902890ADDD001573F0 /* CreateBracketViewCell.m in Sources */,
 				43FCF362287DFC5800B30CC0 /* ViewController.m in Sources */,
 				43F2784E2881F12A007E15E6 /* ProfileViewController.m in Sources */,
 				43F2785D28866AEB007E15E6 /* InfoViewController.m in Sources */,
