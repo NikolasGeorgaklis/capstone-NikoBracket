@@ -8,6 +8,8 @@
 #import "InfoViewController.h"
 #import "InfoViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import <PopupKit/PopupView.h>
+
 static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/scores/json/Tournament/2022?key=";
 
 @interface InfoViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -39,6 +41,25 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     
     
 }
+- (IBAction)didTapInfo:(id)sender {
+    UIView* contentView = [[UIView alloc] init];
+    contentView.backgroundColor = [UIColor whiteColor];
+    contentView.frame = CGRectMake(0.0, 0.0, 250.0, 400.0);
+    contentView.layer.cornerRadius = 20;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 200, 300)];
+    label.numberOfLines = 0;
+    label.text = @"Moneyline bets are the most basic wager in sports betting which is also why they are the most popular.\n\nFrom Google: A moneyline is simply a bet type that only includes Odds, as in “Odds to win”. Example: a moneyline of +150, is just +150 odds ($100 to win $150) for the listed team to win. A moneyline of -150 is just -150 odds ($150 to win $100) for the listed team to win.";
+    label.textColor = [UIColor blackColor];
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.font = [UIFont fontWithName:@"Helvetica" size:14];
+    
+    [contentView addSubview:label];
+    
+    PopupView* popup = [PopupView popupViewWithContentView:contentView];
+    [popup show];
+}
+
 
 - (void)fetchData{
     // parse teams json file
@@ -53,11 +74,11 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     NSString *pListPath = [[NSBundle mainBundle] pathForResource: @"Keys" ofType: @"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile: pListPath];
     NSString *key = [dict objectForKey: @"API_Key"];
+    
     //parse 1st round matchups from json
     NSError *error;
     NSString *url_string = [NSString stringWithFormat: @"%@%@", kMatchUpsEndpoint, key];
     
-
     data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
     NSMutableDictionary *tempDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     self.matchups = [[NSMutableArray alloc] init];
@@ -66,8 +87,7 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     
     //isolate 1st round matchups given all matchups
     for (NSDictionary *game in allMatchups) {
-        if ([game[@"Day"] containsString:@"2022-03-17"]
-            || [game[@"Day"] containsString:@"2022-03-18"]){
+        if ([game[@"Day"] containsString:@"2022-03-17"] || [game[@"Day"] containsString:@"2022-03-18"]){
             [self.matchups addObject:game];
         }
         

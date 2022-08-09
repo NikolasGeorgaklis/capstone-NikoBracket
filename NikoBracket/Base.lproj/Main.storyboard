@@ -164,12 +164,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="sMC-bH-KoS">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="jOh-dA-Vjp">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ZdN-rs-0e0">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="a3p-4d-9gY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mq7-Rc-0sJ">
                                 <rect key="frame" x="302" y="5" width="92" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" image="info.circle" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapInfo:" destination="WBd-Pp-ra6" eventType="touchUpInside" id="DIc-N1-X36"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

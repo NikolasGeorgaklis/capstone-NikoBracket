@@ -40,7 +40,7 @@ static int kFinal = 5;
     self.user = [PFUser currentUser];
     
     self.isFiltered = false;
-    self.searchBar.delegate = self;
+//    self.searchBar.delegate = self;
     
     // parse teams json file
     NSString *path = [[NSBundle mainBundle] pathForResource:@"teams" ofType:@"json"];
