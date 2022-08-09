@@ -23,9 +23,11 @@
     if (file) {
         [self.profilePicture setImageWithURL:url];
     }
-    self.displayName.text = self.user[@"displayName"];
+    self.displayName.text = [NSString stringWithFormat:@"%@", self.user[@"displayName"]];
     self.rank.text = [NSString stringWithFormat:@"Rank: %@", [self.user[@"rank"] stringValue]];
-    self.correctOverTotal.text = [self.user[@"correctPicks"] stringValue];
+    self.correctOverTotal.text = self.user[@"ratio"];
+    self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.height/2.0;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -35,4 +37,3 @@
 }
 
 @end
-

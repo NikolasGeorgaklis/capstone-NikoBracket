@@ -12,6 +12,7 @@
 		43D3078D2890ABA3001573F0 /* CreateBracketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3078C2890ABA3001573F0 /* CreateBracketViewController.m */; };
 		43D307902890ADDD001573F0 /* CreateBracketViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3078F2890ADDD001573F0 /* CreateBracketViewCell.m */; };
 		43DA21F1287F8E0000457AC4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA21F0287F8E0000457AC4 /* HomeViewController.m */; };
+		43DD0D2F28A31E7B00335DE3 /* viewBracketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD0D2E28A31E7B00335DE3 /* viewBracketViewController.m */; };
 		43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784728809521007E15E6 /* PhotoMapViewController.m */; };
 		43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784A2881F0E6007E15E6 /* EditProfileViewController.m */; };
 		43F2784E2881F12A007E15E6 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2784D2881F12A007E15E6 /* ProfileViewController.m */; };
@@ -62,6 +63,8 @@
 		43D3078F2890ADDD001573F0 /* CreateBracketViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateBracketViewCell.m; sourceTree = "<group>"; };
 		43DA21EF287F8E0000457AC4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		43DA21F0287F8E0000457AC4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		43DD0D2D28A31E7B00335DE3 /* viewBracketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = viewBracketViewController.h; sourceTree = "<group>"; };
+		43DD0D2E28A31E7B00335DE3 /* viewBracketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = viewBracketViewController.m; sourceTree = "<group>"; };
 		43F2784628809521007E15E6 /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
 		43F2784728809521007E15E6 /* PhotoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
 		43F278492881F0E6007E15E6 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				43D3078E2890ADDD001573F0 /* CreateBracketViewCell.h */,
 				43D3078F2890ADDD001573F0 /* CreateBracketViewCell.m */,
 				4324E00E28999C3D00EFC8C4 /* Keys.plist */,
+				43DD0D2D28A31E7B00335DE3 /* viewBracketViewController.h */,
+				43DD0D2E28A31E7B00335DE3 /* viewBracketViewController.m */,
 			);
 			path = NikoBracket;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				43F278572886686C007E15E6 /* HomeViewCell.m in Sources */,
 				43FCF36D287DFC5900B30CC0 /* main.m in Sources */,
 				43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */,
+				43DD0D2F28A31E7B00335DE3 /* viewBracketViewController.m in Sources */,
 				43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */,
 				43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */,
 				43FCF396287E10C200B30CC0 /* LoginViewController.m in Sources */,
