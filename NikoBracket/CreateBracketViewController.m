@@ -36,7 +36,6 @@ static const NSInteger kFinal = 5;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *roundControl;
 @property int round;
 - (IBAction)roundControlAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *lockBracket;
 
 
 @end
@@ -47,9 +46,6 @@ static const NSInteger kFinal = 5;
     [super viewDidLoad];
     self.user = [PFUser currentUser];
     self.round = self.roundControl.selectedSegmentIndex;
-    
-    self.lockBracket.hidden = YES;
-    self.tabBarController.tabBar.hidden = YES;
     
     self.createBracketTableView.delegate = self;
     self.createBracketTableView.dataSource = self;
@@ -338,8 +334,6 @@ static const NSInteger kFinal = 5;
 - (IBAction)roundSelectAction:(id)sender {
     self.round = self.roundControl.selectedSegmentIndex;
     
-    self.lockBracket.hidden = self.roundControl.selectedSegmentIndex == 5 ?  NO : YES;
-    
     [self initializeUserBracket:self.westPicks];
     [self initializeUserBracket:self.southPicks];
     [self initializeUserBracket:self.eastPicks];
@@ -586,73 +580,5 @@ static const NSInteger kFinal = 5;
     return finalsMatchups;
 }
 
-- (IBAction)didTapLockBracket:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning"
-                                                 message:@"Are you sure you want to lock your bracket? You will not be able to make changes after pressing OK"
-                                                 preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-     {}];
-    [alert addAction:cancel];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-     {
-        // How many pieces to generate
-            int confettiCount = 200;
-            
-            // What colors should the pieces be?
-            NSArray *confettiColors = @[[UIColor redColor], [UIColor greenColor], [UIColor yellowColor], [UIColor blueColor]];
-            
-            
-            // Everything else that you can configure
-            int screenWidth = self.view.frame.size.width;
-            int screenHeight = self.view.frame.size.height;
-            int randomStartPoint;
-            int randomStartConfettiLength;
-            int randomEndConfettiLength;
-            int randomEndPoint;
-            int randomDelayTime;
-            int randomFallTime;
-            int randomRotation;
-            
-            for (int i = 0; i < confettiCount; i++){
-                randomStartPoint = arc4random_uniform(screenWidth);
-                randomEndPoint = arc4random_uniform(screenWidth);
-                randomDelayTime = arc4random_uniform(100);
-                randomFallTime = arc4random_uniform(3);
-                randomRotation = arc4random_uniform(360);
-                randomStartConfettiLength = arc4random_uniform(15);
-                randomEndConfettiLength = arc4random_uniform(15);
-                NSUInteger randomColor = arc4random() % [confettiColors count];
-                
-                UIView *confetti=[[UIView alloc]initWithFrame:CGRectMake(randomStartPoint, -10, randomStartConfettiLength, 8)];
-                [confetti setBackgroundColor:confettiColors[randomColor]];
-                confetti.alpha = .4;
-                [self.view addSubview:confetti];
-                
-                [UIView animateWithDuration:randomFallTime+5 delay:randomDelayTime*.1 options:UIViewAnimationOptionRepeat animations:^{
-                        [confetti setFrame:CGRectMake(randomEndPoint, screenHeight+30, randomEndConfettiLength, 8)];
-                        confetti.transform = CGAffineTransformMakeRotation(randomRotation);
-                } completion:nil];
-            }
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Congratulations!"
-                                                     message:@"You have created your March Madness Bracket."
-                                                     preferredStyle:UIAlertControllerStyleAlert];
-
-        UIAlertAction *done = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-         {
-            [self.navigationController popViewControllerAnimated:YES];
-            self.tabBarController.tabBar.hidden = NO;
-
-        }];
-        [alert addAction:done];
-        [self presentViewController:alert animated:YES completion:nil];
-        self.user[@"createdBracket"] = @(true);
-        [self.user saveInBackground];
-    }];
-    [alert addAction:ok];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-
-    
-}
 
 @end
