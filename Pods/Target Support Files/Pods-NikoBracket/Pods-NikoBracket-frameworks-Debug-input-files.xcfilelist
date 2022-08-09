@@ -3,4 +3,3 @@ ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/BDBOAuth1Manager/BDBOAuth1Manager.framework
 ${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
 ${BUILT_PRODUCTS_DIR}/Parse/Parse.framework
-${BUILT_PRODUCTS_DIR}/PopupKit/PopupKit.framework
