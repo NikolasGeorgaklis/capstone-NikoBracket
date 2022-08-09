@@ -23,12 +23,14 @@ PODS:
     - Bolts/Tasks (= 1.9.1)
   - Parse/UI (1.19.3):
     - Parse/Core
+  - PopupKit (3.1.1)
 
 DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
   - Parse
   - Parse/UI
+  - PopupKit
 
 SPEC REPOS:
   trunk:
@@ -36,13 +38,15 @@ SPEC REPOS:
     - BDBOAuth1Manager
     - Bolts
     - Parse
+    - PopupKit
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   Parse: 0abb63a0ff6fa34a3f64b81d595a294e2ece143a
+  PopupKit: e362ed92148d831a9c38a2bc7a25893e46d64c54
 
-PODFILE CHECKSUM: 620df12881b265cd1371bff07a577ea66c982e0d
+PODFILE CHECKSUM: 2aa66f316d4e223c1763379ee71080aa217fe06c
 
 COCOAPODS: 1.11.3
