@@ -10,6 +10,7 @@ target 'NikoBracket' do
   pod 'Parse/UI'
   pod 'AFNetworking'
   pod 'BDBOAuth1Manager'
+  pod 'PopupKit'
 
   target 'NikoBracketTests' do
     inherit! :search_paths

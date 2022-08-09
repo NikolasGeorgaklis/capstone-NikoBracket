@@ -5,6 +5,8 @@
 //  Created by Nikolas Georgaklis on 7/26/22.
 //
 
+
+#import "CreateBracketViewController.h"
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *awayFavorite;
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamName;
 @property long indexPath;
+@property (strong, nonatomic) CreateBracketViewController *createBracketView;
+@property long section;
 
 @end
 

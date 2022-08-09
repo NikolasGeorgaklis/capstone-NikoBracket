@@ -6,6 +6,8 @@
 //
 
 #import "CreateBracketViewCell.h"
+#import "CreateBracketViewController.h"
+
 
 @implementation CreateBracketViewCell
 
@@ -22,10 +24,10 @@
     
 }
 - (IBAction)teamSelectAction:(id)sender {
-    NSLog(self.teamSelect.selectedSegmentIndex ? @"true" : @"false");
-    NSLog(@"%d", self.indexPath);
-    
+    [self.createBracketView changePick:self.indexPath inSection:self.section inCell:self];
 }
+
+
 
 
 @end
