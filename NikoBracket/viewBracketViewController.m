@@ -69,8 +69,8 @@
 - (IBAction)didLongPressOnPfp:(id)sender {
     UILongPressGestureRecognizer *profileImageExpand = sender;
        CGRect profileImageframe = profileImageExpand.view.frame;
-       profileImageframe.size.height = profileImageExpand.view.frame.size.height * 3;
-       profileImageframe.size.width = profileImageExpand.view.frame.size.width * 3;
+       profileImageframe.size.height = profileImageExpand.view.frame.size.height * 3.5;
+       profileImageframe.size.width = profileImageExpand.view.frame.size.width * 3.5;
        if(profileImageExpand.state == UIGestureRecognizerStateBegan){
            [UIView animateWithDuration:0.3 animations:^{
                profileImageExpand.view.layer.zPosition = MAXFLOAT;
@@ -78,8 +78,8 @@
                profileImageExpand.view.transform = CGAffineTransformMakeTranslation(self.view.center.x - profileImageExpand.view.center.x, self.view.center.y - profileImageExpand.view.center.y);
            } completion:nil];
        }
-       profileImageframe.size.height = profileImageExpand.view.frame.size.height / 3;
-       profileImageframe.size.width = profileImageExpand.view.frame.size.width / 3;
+       profileImageframe.size.height = profileImageExpand.view.frame.size.height / 3.5;
+       profileImageframe.size.width = profileImageExpand.view.frame.size.width / 3.5;
        if(profileImageExpand.state == UIGestureRecognizerStateEnded){
            [UIView animateWithDuration:0.3 animations:^{
                profileImageExpand.view.frame = profileImageframe;
