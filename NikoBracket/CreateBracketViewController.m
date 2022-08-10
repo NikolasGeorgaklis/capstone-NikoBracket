@@ -645,14 +645,12 @@ static const NSInteger kFinal = 5;
         }];
         [alert addAction:done];
         [self presentViewController:alert animated:YES completion:nil];
-        self.user[@"createdBracket"] = @(true);
+        self.user[@"createdBracket"] = @(YES);
         [self.user saveInBackground];
     }];
     [alert addAction:ok];
     
     [self presentViewController:alert animated:YES completion:nil];
-
-    
 }
 
 @end

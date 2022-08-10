@@ -41,21 +41,22 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     
     
 }
+
 - (IBAction)didTapInfo:(id)sender {
     UIView* contentView = [[UIView alloc] init];
     contentView.backgroundColor = [UIColor whiteColor];
     contentView.frame = CGRectMake(0.0, 0.0, 250.0, 400.0);
     contentView.layer.cornerRadius = 20;
-    
+
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 200, 300)];
     label.numberOfLines = 0;
     label.text = @"Moneyline bets are the most basic wager in sports betting which is also why they are the most popular.\n\nFrom Google: A moneyline is simply a bet type that only includes Odds, as in “Odds to win”. Example: a moneyline of +150, is just +150 odds ($100 to win $150) for the listed team to win. A moneyline of -150 is just -150 odds ($150 to win $100) for the listed team to win.";
     label.textColor = [UIColor blackColor];
     label.lineBreakMode = NSLineBreakByWordWrapping;
     label.font = [UIFont fontWithName:@"Helvetica" size:14];
-    
+
     [contentView addSubview:label];
-    
+
     PopupView* popup = [PopupView popupViewWithContentView:contentView];
     [popup show];
 }
