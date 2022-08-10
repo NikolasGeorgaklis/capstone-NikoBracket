@@ -114,12 +114,13 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     [infoViewCell.homeTeamLogo setImageWithURL:url2];
     
     if([game[@"HomeTeamMoneyLine"] intValue] < 0){
-        infoViewCell.homeFavorite.text = @"FAVORITE";
-        infoViewCell.awayFavorite.text = @"";
+        infoViewCell.HomeFavoriteIcon.hidden = NO;
+        infoViewCell.AwayFavoriteIcon.hidden = YES;
     }
     else{
-        infoViewCell.homeFavorite.text = @"";
-        infoViewCell.awayFavorite.text = @"FAVORITE";
+        infoViewCell.AwayFavoriteIcon.hidden = NO;
+        infoViewCell.HomeFavoriteIcon.hidden = YES;
+
     }
     
     return infoViewCell;

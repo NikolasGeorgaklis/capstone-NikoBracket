@@ -16,8 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
 @property (weak, nonatomic) IBOutlet UILabel *awayMoneyline;
 @property (weak, nonatomic) IBOutlet UILabel *homeMoneyline;
-@property (weak, nonatomic) IBOutlet UILabel *awayFavorite;
-@property (weak, nonatomic) IBOutlet UILabel *homeFavorite;
+@property (weak, nonatomic) IBOutlet UIButton *HomeFavoriteIcon;
+@property (weak, nonatomic) IBOutlet UIButton *AwayFavoriteIcon;
+
 @end
 
 NS_ASSUME_NONNULL_END
