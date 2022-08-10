@@ -41,7 +41,7 @@ static int kFinal = 5;
     
     self.isFiltered = false;
     self.searchBar.delegate = self;
-    
+    self.searchBar.showsCancelButton = true;
     // parse teams json file
     NSString *path = [[NSBundle mainBundle] pathForResource:@"teams" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
@@ -79,6 +79,9 @@ static int kFinal = 5;
     }
     
     [self.homeTableView reloadData];
+}
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar resignFirstResponder];    
 }
 
 -(void)getAccounts{

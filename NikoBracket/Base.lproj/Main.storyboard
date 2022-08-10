@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="-32" y="415"/>
         </scene>
-        <!--Info View Controller-->
+        <!--Round 1 info-->
         <scene sceneID="Vhq-Qr-qJf">
             <objects>
                 <viewController storyboardIdentifier="InfoViewController" id="WBd-Pp-ra6" customClass="InfoViewController" sceneMemberID="viewController">
@@ -133,6 +133,10 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.xbox" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-n9-G78">
+                                                    <rect key="frame" x="59" y="32" width="36" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf5-Md-m00">
                                                     <rect key="frame" x="35" y="91" width="85" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -140,10 +144,6 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.xbox" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-n9-G78">
-                                                    <rect key="frame" x="59" y="32" width="36" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -163,7 +163,7 @@
                         <viewLayoutGuide key="safeArea" id="Ye7-Xa-P0x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sMC-bH-KoS">
+                    <navigationItem key="navigationItem" title="Round 1 info" id="sMC-bH-KoS">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="a3p-4d-9gY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Mq7-Rc-0sJ">
                                 <rect key="frame" x="302" y="5" width="92" height="34"/>
@@ -184,7 +184,7 @@
             </objects>
             <point key="canvasLocation" x="2998.5507246376815" y="414.50892857142856"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="RE2-NE-SAq">
             <objects>
                 <viewController id="oxp-Mt-cV5" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -276,7 +276,7 @@
                         <viewLayoutGuide key="safeArea" id="ejF-TV-ixV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ghb-li-sEz">
+                    <navigationItem key="navigationItem" title="Profile" id="Ghb-li-sEz">
                         <barButtonItem key="rightBarButtonItem" title="edit" style="plain" id="JA7-lc-et3">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Llh-P7-u9h">
                                 <rect key="frame" x="302" y="5" width="92" height="34.5"/>
@@ -530,7 +530,7 @@
             </objects>
             <point key="canvasLocation" x="3844.9275362318845" y="1141.7410714285713"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home Feed-->
         <scene sceneID="799-Cn-jgF">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="qnE-zO-hoK" customClass="HomeViewController" sceneMemberID="viewController">
@@ -608,7 +608,7 @@
                         <viewLayoutGuide key="safeArea" id="CeT-rI-XgS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="f7U-1n-Ljs"/>
+                    <navigationItem key="navigationItem" title="Home Feed" id="f7U-1n-Ljs"/>
                     <connections>
                         <outlet property="homeTableView" destination="1RL-2k-K8L" id="vzR-Bf-hav"/>
                         <outlet property="searchBar" destination="hkB-Uy-Xtz" id="hch-08-NKE"/>
@@ -682,9 +682,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyH-g7-6O5" customClass="PFImageView">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyH-g7-6O5" customClass="PFImageView">
                                 <rect key="frame" x="20" y="124" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="God-ac-cOh" appends="YES" id="IN0-ck-c5x"/>
@@ -786,6 +785,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VVk-0s-SR7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wyH-g7-6O5" firstAttribute="leading" secondItem="VVk-0s-SR7" secondAttribute="leading" constant="20" id="3wD-wS-fi7"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="accuracy" destination="v6V-cT-hyI" id="Mcq-QU-lC7"/>
