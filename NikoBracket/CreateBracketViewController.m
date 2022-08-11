@@ -310,12 +310,12 @@ static const NSInteger kFinal = 5;
         [cell.homeTeamLogo setImageWithURL:url2];
         
         if([game[@"HomeTeamMoneyLine"] intValue] < 0){
-            cell.homeFavorite.text = @"FAVORITE";
-            cell.awayFavorite.text = @"";
+            cell.awayFavoriteIcon.hidden = YES;
+            cell.homeFavoriteIcon.hidden = NO;
         }
         else{
-            cell.homeFavorite.text = @"";
-            cell.awayFavorite.text = @"FAVORITE";
+            cell.homeFavoriteIcon.hidden = YES;
+            cell.awayFavoriteIcon.hidden = NO;
         }
     }
     else{
@@ -328,8 +328,8 @@ static const NSInteger kFinal = 5;
         [cell.homeTeamLogo setImageWithURL:url2];
         
         //no odds for theoretical matchups so no favorites
-        cell.awayFavorite.text = @"";
-        cell.homeFavorite.text = @"";
+        cell.homeFavoriteIcon.hidden = YES;
+        cell.awayFavoriteIcon.hidden = YES;
     }
         
 

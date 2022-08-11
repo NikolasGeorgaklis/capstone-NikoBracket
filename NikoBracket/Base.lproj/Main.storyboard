@@ -151,7 +151,7 @@
                                         <connections>
                                             <outlet property="AwayFavoriteIcon" destination="nad-KM-QhU" id="vIK-RQ-Myu"/>
                                             <outlet property="AwaySchoolName" destination="It2-0v-hND" id="drw-JJ-062"/>
-                                            <outlet property="HomeFavoriteIcon" destination="LUm-YG-vdH" id="Uc4-hN-unR"/>
+                                            <outlet property="HomeFavoriteIcon" destination="LUm-YG-vdH" id="QNr-3N-vRN"/>
                                             <outlet property="awayMoneyline" destination="WMQ-70-cfw" id="ZHX-He-UZy"/>
                                             <outlet property="awayTeamLogo" destination="vNa-n9-G78" id="v9x-ZT-Sxz"/>
                                             <outlet property="homeMoneyline" destination="ot8-6t-AZn" id="KTF-hK-qHY"/>
@@ -354,20 +354,6 @@
                                                     <rect key="frame" x="273" y="0.0" width="46" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLs-jr-kRW">
-                                                    <rect key="frame" x="205" y="53" width="189" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBI-U4-8EP">
-                                                    <rect key="frame" x="20" y="53" width="180" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Px1-p0-LKB">
                                                     <rect key="frame" x="20" y="75" width="180" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -386,13 +372,29 @@
                                                     <rect key="frame" x="87" y="0.0" width="46" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFu-nj-8BD">
+                                                    <rect key="frame" x="65" y="51" width="90" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Favorite" cornerStyle="capsule">
+                                                        <color key="baseBackgroundColor" red="0.12656484879999999" green="0.72315963270000005" blue="0.11821878869999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-fK-zdK">
+                                                    <rect key="frame" x="251" y="51" width="90" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Favorite" cornerStyle="capsule">
+                                                        <color key="baseBackgroundColor" red="0.12656484879999999" green="0.72315963270000005" blue="0.11821878869999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </buttonConfiguration>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="awayFavorite" destination="pBI-U4-8EP" id="dYv-a0-mnU"/>
+                                            <outlet property="awayFavoriteIcon" destination="ZFu-nj-8BD" id="QGG-v8-EHD"/>
                                             <outlet property="awayTeamLogo" destination="9Si-v3-t2o" id="6fd-DZ-OZK"/>
                                             <outlet property="awayTeamName" destination="Px1-p0-LKB" id="Vx4-Cn-7uH"/>
-                                            <outlet property="homeFavorite" destination="dLs-jr-kRW" id="OoF-zR-sjY"/>
+                                            <outlet property="homeFavoriteIcon" destination="NW2-fK-zdK" id="VNe-hE-z44"/>
                                             <outlet property="homeTeamLogo" destination="RtZ-pZ-Wu0" id="cB3-S8-Y1I"/>
                                             <outlet property="homeTeamName" destination="mNi-8n-vSn" id="hbs-am-QXT"/>
                                             <outlet property="teamSelect" destination="ILX-Y8-XRX" id="B4b-DU-9yo"/>

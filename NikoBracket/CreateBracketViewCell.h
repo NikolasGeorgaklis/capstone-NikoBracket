@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *awayTeamLogo;
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamName;
-@property (weak, nonatomic) IBOutlet UILabel *homeFavorite;
-@property (weak, nonatomic) IBOutlet UILabel *awayFavorite;
+@property (weak, nonatomic) IBOutlet UIButton *awayFavoriteIcon;
+@property (weak, nonatomic) IBOutlet UIButton *homeFavoriteIcon;
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamName;
 @property long indexPath;
 @property (strong, nonatomic) CreateBracketViewController *createBracketView;
