@@ -30,7 +30,7 @@ static NSString * const kMatchUpsEndpoint = @"https://api.sportsdata.io/v3/cbb/s
     // Do any additional setup after loading the view.
     self.infoTableView.delegate = self;
     self.infoTableView.dataSource = self;
-    self.infoTableView.rowHeight = 125;
+    self.infoTableView.rowHeight = UITableViewAutomaticDimension;
     
     [self fetchData];
     
