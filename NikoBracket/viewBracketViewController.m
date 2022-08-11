@@ -53,7 +53,7 @@
     
     //display user info
     self.profilePicture.file = self.user[@"profilePicture"];
-    self.emailLabel.text = self.user[@"email"];
+    self.emailLabel.text = self.user[@"username"];
     self.displayName.text = self.user[@"displayName"];
     self.grade.text = self.user[@"grade"] == NULL ? @"Grade: " : [NSString stringWithFormat:@"Grade: %@", self.user[@"grade"]];
     self.major.text = self.user[@"major"] == NULL ? @"Major: " : [NSString stringWithFormat:@"Major: %@", self.user[@"major"]];
