@@ -19,6 +19,7 @@ static int numOfPastGames;
 
 @property (strong, nonatomic) PFUser *user;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UIButton *createBracket;
 
 @end
 
@@ -35,6 +36,7 @@ static int numOfPastGames;
     self.gradeAndMajor.text = self.user[@"grade"] == NULL ? @"Grade Major" : [NSString stringWithFormat:@"%@ %@ Major", self.user[@"grade"], self.user[@"major"]];
     self.pfp.layer.cornerRadius = self.pfp.frame.size.height/2.0;
     if ([self.user[@"createdBracket"] isEqual:@(true)]){
+        self.createBracket.hidden = YES;
         [self getUserBracketStats:5];//final round is round 5
         self.rank.text = [self.user[@"rank"] stringValue];
         self.correctPicksLabel.text = self.user[@"ratio"];

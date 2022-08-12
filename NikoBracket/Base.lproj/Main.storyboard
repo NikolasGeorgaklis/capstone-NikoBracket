@@ -393,6 +393,7 @@
                     <connections>
                         <outlet property="correctPicksAsPercent" destination="5MD-2o-Wgl" id="Jt1-x6-arj"/>
                         <outlet property="correctPicksLabel" destination="ZAs-AZ-2Or" id="5wu-LI-N8R"/>
+                        <outlet property="createBracket" destination="dBx-sV-S0W" id="psw-Md-tTU"/>
                         <outlet property="displayName" destination="EKO-gF-owO" id="uyW-yW-5rC"/>
                         <outlet property="emailLabel" destination="58L-Rx-Rl1" id="Igb-Us-ygJ"/>
                         <outlet property="gradeAndMajor" destination="VJb-sE-TK0" id="1RK-hY-6UX"/>
@@ -1162,21 +1163,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKJ-VD-XfA">
-                                <rect key="frame" x="20" y="89" width="323" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1q-So-Bve">
-                                <rect key="frame" x="335" y="91" width="69" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Post"/>
-                                <connections>
-                                    <action selector="postComment:" destination="vFb-dj-E6W" eventType="touchUpInside" id="BL1-DI-cGL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAL-fD-pXF">
                                 <rect key="frame" x="20" y="44" width="33" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1184,6 +1170,21 @@
                                 <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
                                 <connections>
                                     <action selector="didTapDone:" destination="vFb-dj-E6W" eventType="touchUpInside" id="pcV-Qb-yvv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKJ-VD-XfA">
+                                <rect key="frame" x="15" y="83" width="323" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1q-So-Bve">
+                                <rect key="frame" x="330" y="85" width="69" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Post"/>
+                                <connections>
+                                    <action selector="postComment:" destination="vFb-dj-E6W" eventType="touchUpInside" id="BL1-DI-cGL"/>
                                 </connections>
                             </button>
                         </subviews>
