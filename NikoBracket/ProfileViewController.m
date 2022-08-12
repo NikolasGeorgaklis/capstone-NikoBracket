@@ -55,6 +55,7 @@ static int numOfPastGames;
     self.tabBarController.tabBar.hidden = NO;
     self.user = [PFUser currentUser];
     if ([self.user[@"createdBracket"] isEqual:@(true)]){
+        self.createBracket.hidden = YES;
         [self getUserBracketStats:5];//final round is round 5
         self.rank.text = [self.user[@"rank"] stringValue];
         self.correctPicksLabel.text = self.user[@"ratio"];
