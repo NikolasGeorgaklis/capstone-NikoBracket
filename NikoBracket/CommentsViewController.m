@@ -66,6 +66,7 @@
 - (IBAction)postComment:(id)sender {
     [Comment postCommentWithText:self.commentTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
     } andUser:self.user];
+    self.commentTextField.text = @"";
 }
 
 
