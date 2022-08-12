@@ -45,7 +45,7 @@
 - (void)getComments{
     PFUser *currentUser = [PFUser currentUser];
     PFQuery *query = [PFQuery queryWithClassName:@"comment"];
-    [query orderByAscending:@"likes"];
+    [query orderByDescending:@"likes"];
     self.comments = [[NSMutableArray alloc] init];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         for (PFObject *comment in objects) {

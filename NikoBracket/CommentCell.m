@@ -38,6 +38,7 @@
             self.commentContent.text = self.comment[@"commentContent"];
             self.likeCount.text = [self.comment[@"likes"] stringValue];
             self.profilePicture.file = self.comment[@"author"][@"profilePicture"];
+            self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.height/2.0;
             [self.profilePicture loadInBackground];
             
             PFUser *user = [PFUser currentUser];
