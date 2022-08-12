@@ -36,7 +36,7 @@
     self.gradeField.text = self.user[@"grade"];
     self.majorField.text = self.user[@"major"];
     
-    self.pfp.layer.cornerRadius = self.pfp.frame.size.height/2.0;
+    self.pfp.layer.cornerRadius = self.pfp.frame.size.height/2;
 
     
 }
