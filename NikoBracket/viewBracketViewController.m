@@ -6,6 +6,7 @@
 //
 
 #import "viewBracketViewController.h"
+#import "CommentsViewController.h"
 
 @interface viewBracketViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *selectedChampionLogo;
@@ -84,6 +85,12 @@
 - (IBAction)didTapDone:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CommentsViewController *commentsVC = [segue destinationViewController];
+    commentsVC.user = self.user;
 }
 
 @end

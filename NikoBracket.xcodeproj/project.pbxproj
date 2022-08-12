@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		158449B9F010F7B81BBE6CAE /* Pods_NikoBracket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AB6547BC4AA7125ECBD228 /* Pods_NikoBracket.framework */; };
 		4324E00F28999C3D00EFC8C4 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4324E00E28999C3D00EFC8C4 /* Keys.plist */; };
+		437EA59A28A5FF590016D988 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 437EA59928A5FF590016D988 /* Comment.m */; };
+		437EA59D28A602A50016D988 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 437EA59C28A602A50016D988 /* CommentCell.m */; };
+		437EA5A028A6C7BB0016D988 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437EA59F28A6C7BB0016D988 /* CommentsViewController.m */; };
 		43D3078D2890ABA3001573F0 /* CreateBracketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3078C2890ABA3001573F0 /* CreateBracketViewController.m */; };
 		43D307902890ADDD001573F0 /* CreateBracketViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D3078F2890ADDD001573F0 /* CreateBracketViewCell.m */; };
 		43DA21F1287F8E0000457AC4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DA21F0287F8E0000457AC4 /* HomeViewController.m */; };
@@ -57,6 +60,12 @@
 		2C149748E6F469F6F4E158C2 /* Pods_NikoBracketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NikoBracketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C25FB1B6E0BB80ED29971A3 /* Pods-NikoBracketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NikoBracketTests.release.xcconfig"; path = "Target Support Files/Pods-NikoBracketTests/Pods-NikoBracketTests.release.xcconfig"; sourceTree = "<group>"; };
 		4324E00E28999C3D00EFC8C4 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = ../../Keys.plist; sourceTree = "<group>"; };
+		437EA59828A5FF590016D988 /* Comment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		437EA59928A5FF590016D988 /* Comment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		437EA59B28A602A50016D988 /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		437EA59C28A602A50016D988 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		437EA59E28A6C7BB0016D988 /* CommentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		437EA59F28A6C7BB0016D988 /* CommentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		43D3078B2890ABA3001573F0 /* CreateBracketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateBracketViewController.h; sourceTree = "<group>"; };
 		43D3078C2890ABA3001573F0 /* CreateBracketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateBracketViewController.m; sourceTree = "<group>"; };
 		43D3078E2890ADDD001573F0 /* CreateBracketViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateBracketViewCell.h; sourceTree = "<group>"; };
@@ -203,6 +212,12 @@
 				4324E00E28999C3D00EFC8C4 /* Keys.plist */,
 				43DD0D2D28A31E7B00335DE3 /* viewBracketViewController.h */,
 				43DD0D2E28A31E7B00335DE3 /* viewBracketViewController.m */,
+				437EA59828A5FF590016D988 /* Comment.h */,
+				437EA59928A5FF590016D988 /* Comment.m */,
+				437EA59B28A602A50016D988 /* CommentCell.h */,
+				437EA59C28A602A50016D988 /* CommentCell.m */,
+				437EA59E28A6C7BB0016D988 /* CommentsViewController.h */,
+				437EA59F28A6C7BB0016D988 /* CommentsViewController.m */,
 			);
 			path = NikoBracket;
 			sourceTree = "<group>";
@@ -484,13 +499,16 @@
 				43F2785D28866AEB007E15E6 /* InfoViewController.m in Sources */,
 				43FCF35C287DFC5800B30CC0 /* AppDelegate.m in Sources */,
 				43F278572886686C007E15E6 /* HomeViewCell.m in Sources */,
+				437EA59A28A5FF590016D988 /* Comment.m in Sources */,
 				43FCF36D287DFC5900B30CC0 /* main.m in Sources */,
 				43FCF35F287DFC5800B30CC0 /* SceneDelegate.m in Sources */,
 				43DD0D2F28A31E7B00335DE3 /* viewBracketViewController.m in Sources */,
 				43F2784B2881F0E6007E15E6 /* EditProfileViewController.m in Sources */,
 				43F2784828809521007E15E6 /* PhotoMapViewController.m in Sources */,
 				43FCF396287E10C200B30CC0 /* LoginViewController.m in Sources */,
+				437EA5A028A6C7BB0016D988 /* CommentsViewController.m in Sources */,
 				43F2785A28866A7A007E15E6 /* InfoViewCell.m in Sources */,
+				437EA59D28A602A50016D988 /* CommentCell.m in Sources */,
 				43DA21F1287F8E0000457AC4 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
